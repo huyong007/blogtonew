@@ -1,4 +1,4 @@
-//引入类的写法，过程编程的搞定加一
+/*引入类的写法，过程编程的搞定加一
 class Functor {
     construtor(val) {
         this.val = val;
@@ -10,6 +10,7 @@ function addOne(val) {
 var obj = new Functor(1);
 var val = addOne(obj.val);
 var obj2 = new Functor(val);
+*/
 //优化处理
 class Functor {
     constructor(val) {
@@ -30,20 +31,20 @@ var obj4 = obj3.map(function (val) {
     console.log(val);
 });
 //链式写法
-class Functor{
+/*class Functor{
     constructor(val) {
         this.val = val;
     };
     map(f) {
         return new Functor(f(this.val));
     }
-}
+}*/
 var obj = new Functor('js');
 obj.map(function (val) {
     return 'hello, ' + val;
 })
     .map(function (val) {
-        return 'val, ' + 'how are u!';
+        return val + ' ,how are u!';
     })
     .map(function (val) {
         console.log(val);
