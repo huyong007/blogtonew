@@ -24,10 +24,10 @@ fsextra.read(function (err, content) {
 工具的两个功能，也就时api给的err和content两个参数，少一个就完蛋了
 就无法使用*/
 
-
+//设计者设计的调用fs库来给结果的函数
 var fs = require('fs');
 function readPromise(callback) {
-    return new Promise(function (resole, reject) {
+    return new Promise(function (resolve, reject) {
         fs.readFile('./package.json', 'utf-8',
             function (err, content) {
                 if (err) {
