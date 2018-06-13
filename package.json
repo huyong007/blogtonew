@@ -1,0 +1,11 @@
+{
+  "name": "blogtonew",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:huyong007/blogtonew.git",
+  "author": "huyong <18168400272@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.87.0"
+  }
+}
