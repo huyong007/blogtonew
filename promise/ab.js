@@ -3,26 +3,27 @@
 var axios = require('axios');
 //构建调用户名的函数
 //构建重复操作的替代函数
-var data = function (object) {
+var getData = function (object) {
     return object.data;
 };
-function readName() {
-    axios.get('https://cnodejs.org/api/v1/topics?page=1&tab=good&limit=1&mdrender=false')
-        .then(data)
+function getName() {
+     return axios.get('https://cnodejs.org/api/v1/topics?page=1&tab=good&limit=1&mdrender=false')
+        .then(getData)
         .then(response => {
             return response.data[0].author.loginname;
         })
-        .then(nameInfo)
         .catch(console.log);
 }
-function nameInfo(name) {
-    axios.get('https://cnodejs.org/api/v1/user/' + name)
-        .then(data)
-        .then(data)
-        .then(console.log)
+function getNameInfo(name) {
+    return axios.get('https://cnodejs.org/api/v1/user/' + name)
+        .then(getData)
+        .then(result => {
+            return result.data;
+        })
         .catch(console.log);
 }
 
-readName();
+getName().then(getNameInfo).then(console.log);
+;
 
 
