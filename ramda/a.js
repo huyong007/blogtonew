@@ -1,5 +1,18 @@
 
 var R = require('ramda');
+Important
+/*
+List Important
+R.filter R.find R.findIndex R.uniq R.map
+
+Function
+R.curry R.compose
+
+Object
+R.clone R.prop R.propEq
+Important*/
+
+
 /* function isEven(n) {
     return n % 2 === 0;
 };
