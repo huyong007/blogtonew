@@ -1,0 +1,24 @@
+
+var R = require('ramda');
+/* function isEven(n) {
+    return n % 2 === 0;
+};
+var isEven = n => n % 2 === 0;
+var x = R.filter(isEven, [1, 3, 2, 4, 4, 8]);
+console.log(x);
+var x = R.filter(isEven, { a: 1, b: 3,c: 2,d: 4,e: 4,z: 8});
+console.log(x); */
+/* var abby = { name: 'abby', age: 7, hair: 'blond' };
+var fred = { name: 'fred', age:12, hair: 'brown' };
+var rusty = { name: 'rusty', age:10, hair: 'brown' };
+var alois = { name: 'alois', age: 14, disposition: 'sruly' };
+var kids = [abby, fred, rusty, alois];
+
+console.log(R.filter(hasAgeRange, kids));
+console.log(R.filter(R.propEq('age', 12))(kids));
+console.log(R.find(R.propEq('age', 12))(kids).name);
+var xs = [{ a: 1 }, { a: 2 }, { a: 3 }];
+var y = R.propEq('a', 2);
+console.log(R.find(R.propEq('a', 2))(xs));
+console.log(R.filter(R.propEq('a', 2))(xs)); */
+
