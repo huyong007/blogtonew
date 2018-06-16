@@ -1,6 +1,6 @@
 
 var R = require('ramda');
-Important
+  
 /*
 List Important
 R.filter R.find R.findIndex R.uniq R.map
@@ -34,4 +34,16 @@ var xs = [{ a: 1 }, { a: 2 }, { a: 3 }];
 var y = R.propEq('a', 2);
 console.log(R.find(R.propEq('a', 2))(xs));
 console.log(R.filter(R.propEq('a', 2))(xs)); */
+
+/* var xs = [{ a: 1 }, { a: 2 }, { a: 3 }];
+
+console.log(R.findIndex(R.propEq('b', 2))(xs));
+console.log(R.findIndex(R.propEq('a', 4))(xs)); */
+/* //数组的去重
+console.log(R.uniq(['a', 'b', 'a', NaN, undefined]));
+
+
+console.log(R.uniq([1, 1, 'c', 2, 'd'])); */
+
+
 
