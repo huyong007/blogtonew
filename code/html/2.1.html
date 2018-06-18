@@ -1,0 +1,55 @@
+<!--<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+             ev.dataTransfer.setData("text", ev.target.id);
+            
+
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data=ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <img id="drag1" src="img_log.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
+    <!--整个函数还是很好玩的，从让元素可以拖动到定义可以拖动元素，再到定义元素将要进入的位置，最后拖动元素进入一个新的区域，
+        整个过程既要照顾进入位置的元素是否接受也要定义拖走元素是否能够拖走，通过元素的属性draggable；
+    
+</body>
+
+</html>-->
+<!-- <!DOCYPE html>
+<html>
+    <body>
+<div id="result"></div>
+<script>
+    //Check browser support 
+    if(typeof(Storage) !=="undefined"){
+//store
+localStorage.setItem("lastname","xiaohua");
+//Retrieve
+document.getElementById("result").innerHTML=
+localStorage.getItem("Boolean(lastname)");
+/* localStorage.removeItem("lastname"); */
+    }else{
+        document.getElementById("result").innerHTML="抱歉！浏览器不支持 web Storage..."
+    }
+    /*1.函数if else 2.检查本地对象是否存在使用typeof，3. 两个存储对象localStorage和sessionStorage,4.取一个元素对象的document.getElementById，
+存入的话就是innerHTML，5,取一个元素的既可以是用localStorage.getItem，也可以是直接localStorage.lastname,直接加上此对象的的名,6,localStorge.remove
+并没有实验成功.7.转换成其他格式这个事情也没搞定*/
+</script>
+    </body>
+    
+</html>
+ -->
+ 
