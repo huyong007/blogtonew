@@ -44,6 +44,8 @@ console.log(R.uniq(['a', 'b', 'a', NaN, undefined]));
 
 
 console.log(R.uniq([1, 1, 'c', 2, 'd'])); */
+console.log(R.replace(/A/g, 'T', 'ATTGC'));
+console.log(R.replace(/T/g, 'A', 'ATTGC'));
 
 
 

@@ -26,3 +26,18 @@ else var y = numbers.sort(function (a, b) {
 });
 return x = y[1] + y[2];
 console.log(x = y[1] + y[2]); */
+/* names = ["Alex", "Jacob", "Mark", "Max","huyong"];
+
+function likes(names) {
+    if (names.length === 0) { return 'no one likes this' }
+    else if (names.length === 1) { return names[0] + ' likes this' }
+    else if (names.length === 2) { return names[0] + ' and ' + names[1] + ' like this' }
+    else if (names.length === 3) { return names[0] + ', ' + names[1] + ' and ' + names[2] + ' like this' }
+    else {
+        console.log(names[0] + ', ' + names[1] + ' and ' + (names.length - 2) + ' others like this');
+        
+    }
+}
+likes(names);
+/*在最后一个else的输出中names.length-2 和(names.length-2)两者会得到不同的结果，一个长字符会把前者认定为三个字符组成的，进而进行
+字符中间的加减转换，*/ 
