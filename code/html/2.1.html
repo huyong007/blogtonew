@@ -39,7 +39,7 @@
 localStorage.setItem("lastname","xiaohua");
 //Retrieve
 document.getElementById("result").innerHTML=
-localStorage.getItem("Boolean(lastname)");
+Number(localStorage.getItem("lastname"));
 /* localStorage.removeItem("lastname"); */
     }else{
         document.getElementById("result").innerHTML="抱歉！浏览器不支持 web Storage..."
@@ -52,4 +52,149 @@ localStorage.getItem("Boolean(lastname)");
     
 </html>
  -->
- 
+<!-- 统计页面点击 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <p><button onclick="clickCounter()" type="button">请点击这里！</button></p>
+        <div id="result"></div>
+        <p>请点击按钮使得计算器增加</p>
+        <p>请关闭浏览器或标签页，然后再试一次，计数器将继续计数（不会重置）。</p>
+        <script>
+            function clickCounter() {
+                if (typeof (Storage) !== "underfined") {
+                    if (localStorage.clickcount) {
+                        localStorage.clickcount =
+                            Number(localStorage.clickcount) + 1;
+                    } else {
+                        localStorage.clickcount = 1;
+
+                    }
+                    document.getElementById("result").innerHTML = "您已经点击这个按钮" + localStorage.clickcount + " 次。";
+
+                } else {
+                    document.getElementById("result").innerHTML = "抱歉！您的浏览器不支持 web Storage...";
+                }
+            }
+        </script>
+    </body>
+    <!-- 知识点总结：1.localStorage.clickout这个属性可以统计某个button的点击量；2.文档中操纵某个元素使用的方法是
+    getElementById,对于一个元素进行内容存储用的是元素的属性innerHTML这个元素；3.元素的类型规范是用type这个属性，一个
+按键点击就是button，4.对于一个元素如果想调用一个函数直接自定一个属性，调用这个函数，函数写在script中，
+5.但是为什么不会重置呢？
+</html> -->
+<!-- sessionStorage -->
+<!-- <!DOCTYPE HMTL>
+<home>
+    <head>
+        <script>
+       function clickCounter() {
+           if(typeof(Storage)!=="undefined"){
+               if(sessionStorage.clickCounter){
+                   sessionStorage.clickCounter=
+                   Number(sessionStorage.clickCounter)+1;
+               }else{
+                   sessionStorage.clickCounter=1;
+               }
+               document.getElementById("result").innerHTML="在本session中，您已经点击这个按钮"
+               +sessionStorage.clickCounter+" 次。"
+           }else{
+               document.getElementById("result").innerHTML="抱歉！您的浏览器不支持 web Storage...";
+           }
+       };
+       function comeTrueDream() {
+           document.getElementById("dream").innerHTML=Boolean("节省您的时间，让您有更多的时间陪伴家人！，因为我也爱我的家人")
+       }
+        </script>
+    </head>
+    <body>
+        <p><button onclick="clickCounter()" type="button">请点击这里！</button>
+            <div id="result"></div>
+            <p>请点击按钮是的计数器增加</p>
+            <p>请关闭浏览器或标签页，然后再试一次，计数器将继续计数（重置）。
+        
+            </p>
+            <button onclick="comeTrueDream()" type="button">梦想实现</button>
+            <div id="dream"></div>
+    </body>
+    <!-- 1.元素button这个按钮元素，出发点击进行交互的属性是onclick,对于这个属性我们可以给出方法，放在script上面
+    ，对着点击的事件交互其他内容，可以是网页可以是函数，对于type这个如果写上应该更规范一些，2.如果是触发网页的操作
+就是使用getElementById这个document的方法，这个方法下面针对的是具体的元素对象，元素对象如果是输入内容就是innerHTML这个
+、方法的触发，document.getElementById.("xxx").innerHMTL="",如果想把双引号里面的字符串转化成其他类型直接前面加上
+相应的类型转换对象就好了 
+</home>
+ -->
+<!-- 应用程序缓存application cache  -->
+<!DOCTYPE html>
+<html manifest="/example/html5/demo_html.appcache">
+
+<body>
+    <script type="text/javascript" src="/example/html5/demo_time.js">
+    </script>
+    <p id="timePara">
+        <button onclick="getDateTime()">获得日期和事件</button>
+    </p>
+    <p>
+        <img src="/i/w3school_banner.gif" />
+    </p>
+    <p>请打开
+        <a href="/example/html5/html5_html_manifest.html">这个页面</a>，然后脱机浏览，重新加载页面。页面中的脚本和图像依然可用。</p>
+</body>
+<!-- 因为没有manifest相关的文件，不能进行进一步的实践，manifest具体使用我还是需要再看其他文件的内容 -->
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
