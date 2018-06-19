@@ -128,7 +128,7 @@ Number(localStorage.getItem("lastname"));
 </home>
  -->
 <!-- 应用程序缓存application cache  -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html manifest="/example/html5/demo_html.appcache">
 
 <body>
@@ -143,58 +143,120 @@ Number(localStorage.getItem("lastname"));
     <p>请打开
         <a href="/example/html5/html5_html_manifest.html">这个页面</a>，然后脱机浏览，重新加载页面。页面中的脚本和图像依然可用。</p>
 </body>
-<!-- 因为没有manifest相关的文件，不能进行进一步的实践，manifest具体使用我还是需要再看其他文件的内容 -->
-</html>
+<!-- 因为没有manifest相关的文件，不能进行进一步的实践，manifest具体使用我还是需要再看其他文件的内容 
+</html> -->
+<!-- web worker  -->
+<!-- <!DOCYTPE HTML>
+<html>
+
+<body>
+    <p>Count numbers:
+        <output id="result"></output>
+    </p>
+    <button onclick="startWorker()">start</button>
+    <button onclick="stopWorker()">stop</button>
+    <br/>
+    <br/>
+    <script>
+        var w;
+        function startWorker() {
+            if (typeof (w) == "undefined") {
+                if (typeof (w) == "underfined") {
+                    w = new Worker("demo_workers.js");
+                }
+                w.onmessage = function (event) {
+                    document.getElementById("result").innerHTML = event.data;
+                };
+            } else {
+                document.getElementById("result").innerHTML = "sorry! no web worker support.";
+            }
+        };
+        function stopWorker() {
+            w.terminate();
+            w = underfined;
+        }
+        //首先说我的onmessage和terminate两个都是undefined，不知道怎么回事
+    </script>
 
 
 
+</body>
+
+</html> -->
+<!--   <!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Page Title</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+      <script src="main.js"></script>
+  </head>
+  <body>
+      <textarea cols="40" rows="10">
+          祭坛是个神秘而古老的形式
+      </textarea>
+  </body>
+  </html> -->
 
 
+<!-- HTML用法总结 -->
+<!--
+其他：
+仅仅把标题标签用于标题文本，不要仅仅为了产生粗体而使用它们，请使用其他标签或css代替
+-->
+<!-- 文本居中排列的属性是align ，这个对象属性有三个属性：center,right,left-->
+<!--水平线和折行分别是<hr/><br/>  -->
+<!-- 文本颜色的属性：1.bgcolor -->
+<!-- 文本元素位置的属性：1.align  -->
+<!-- 
+文本字体相关格式相关的元素：
+1.b和strong(文本加粗)；2.big变大变粗；3.i和em包裹的文本是斜字体；4.small是将
+文本变小；5.sub是将包裹文本悬浮于正常行之下并变小，sup正好相反；10.文本字体从右往左开始显示的元素bdo配合dir="rtl
+使用才有效果；12.文本字体中间加线表删除的元素del，加下划线的ins-->
+<!--
+一些特殊的文本格式表达元素：
+6.pre是显示代码最好的元素，使得格式不变；
+7.几个跟计算机输出显示相关的元素：code，kbd，tt(teletype text),samp(sample text),var(Computer varialbe);
+8.地址相关的元素：address，需要配合比如a元素，href属性，还有br元素进行配合使用；9.缩写abbr 元素 需要配合title属性显示缩写的
+正常单词；11.引用的元素blockquote会换行和加上外边距，而短引用的q元素直接出现在冒号之后没有换行和外边距 -->
+<!-- 
+链接相关的元素和属性总结：
+1，a是经常用到的链接元素，跟他搭配的属性有href，target="_blank",如果a元素中可以加入
+比如图片这样的标记语言，用来作为链接进行点击，本页面之内的链接是直接href的属性值直接写成#加上链接到的命名元素
+，命名元素也是使用a元素，但是定位是使用name来进行定位，其中target对象的top属性不知道有什么用处
+，我直接使用链接不是更好吗？；2.图片链接的元素是img，其对应的链接图片的属性是src；3.电子邮件地址也是使用元素a和href -->
+<!--
+框架元素frameset总结：
+1.框架元素frameset和body元素是不兼容的，2.对于frameset元素的属性cols是为了让整个画布垂直分成几份，
+而水平分的属性是rows；3.对于分好的画布内使用frame元素引入链接src，如果浏览器不支持frameset元素此时使用noframe元素包裹一个body
+元素进行显示错误信息，4.框架里面套框架仍然是frameset元素；5.noresize属性是固定框架使其不可移动的；6.
+ -->
+<!--
+表格元素总结：
+1.表格的元素是table；2.表格行使用tr标签表示；3.表格数据使用td标签包裹；4.border属性表示表格的边框重度值；
+5.表头th元素默认是平行排列，如果需要垂直排列需要和td结合来使用；6.表格的标题使用元素caption；7.对于th元素，横向跨两行的元素
+是colspan,垂直跨两行的元素是rowspan；8.单元格边距cellpadding，这个边距使用在table元素中；9.单元格间距cellspacing，这个间距
+指单元格之间的距离；10，背景颜色和背景图片分别是属性bgcolor和background，这个两个属性是全局属性；11，表格可以和frame结合使用
+-->
+<!-- 
+列表总结：
+1.实心点列表ul元素和li元素，ul的属性type属性值disc，circle和square分别表示不同的图标类型
+2.数字列表是ol元素和li元素，同时开始的数字使用start元素进行标记，type属性值可以改变列表的顺序图标类型
+3.dl,dt,dd分别表示了列表的三层结构
+ -->
+ <!-- 
+表单输入总结：
+1.表示表单输入的元素是input，其总是被包裹在form元素中
+2.input元素的属性包括type表示是什么类型文本，有text，password，checkbox(复选框),button(表示按键按钮元素)，
+radio单选框(check="check"表示未选时定位的选框)，；name表示输入的数据名称
+3.下拉列表使用form，select和option三个元素进行定义；select需要属性name，option需要属性value(selected="selected表示未选
+时定位的选框")
+4.textarea 表示一个文本框输入区域的元素，其中cols表示横向的单元格间距，raws表示纵向的单元格间距，一个textarea中只能有一个textarea
+5.form fieldset legend 三个元素共同构成了一个拥有一级和二级标题的输入趋于
+6.表单实例的内容继续总结；
+ -->
+ <!-- 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  -->
