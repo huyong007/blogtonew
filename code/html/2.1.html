@@ -219,15 +219,15 @@ Number(localStorage.getItem("lastname"));
 5.sub是将包裹文本悬浮于正常行之下并变小，sup正好相反；
 10.文本字体从右往左开始显示的元素bdo配合dir="rtl使用才有效果；
 12.文本字体中间加线表删除的元素del，加下划线的ins
--->
+--> 
 <!--
-一些特殊的文本格式表达元素：
+一些特殊的文本格式表达元素（最好是使用样式表来完成整个任务）：
 6.pre是显示代码最好的元素，使得格式不变；
 7.几个跟计算机输出显示相关的元素：code，kbd，tt(teletype text),samp(sample text),var(Computer varialbe);
 8.地址相关的元素：address，需要配合比如a元素，href属性，还有br元素（有一个clear属性，常和图片文本结合时使用）进行配合使用；
-9.缩写abbr 元素 需要配合title属性显示缩写的
-正常单词；
-11.引用的元素blockquote会换行和加上外边距，而短引用的q元素直接出现在冒号之后没有换行和外边距 -->
+9.缩写abbr 元素 需要配合title属性显示缩写的正常单词；
+11.引用的元素blockquote会换行和加上外边距，而短引用的q元素直接出现在冒号之后没有换行和外边距
+ -->
 <!-- 
 链接相关的元素和属性总结：
 1，a是经常用到的链接元素，跟他搭配的属性有href，target="_blank"或者,如果a元素中可以加入
@@ -240,16 +240,28 @@ Number(localStorage.getItem("lastname"));
  -->
 <!--
 框架元素frameset总结：
-1.框架元素frameset和body元素是不兼容的，2.对于frameset元素的属性cols是为了让整个画布垂直分成几份，
-而水平分的属性是rows；3.对于分好的画布内使用frame元素引入链接src，如果浏览器不支持frameset元素此时使用noframe元素包裹一个body
-元素进行显示错误信息，4.框架里面套框架仍然是frameset元素；5.noresize属性是固定框架使其不可移动的；6.
+1.框架元素frameset和body元素是不兼容的，
+2.对于frameset元素的属性cols是为了让整个画布垂直分成几份，而水平分的属性是rows；
+3.对于分好的画布内使用frame元素引入链接src，如果浏览器不支持frameset元素此时使用noframe元素包裹一个body
+元素进行显示错误信息，
+4.框架里面套框架仍然是frameset元素；
+5.noresize属性是固定框架使其不可移动的；
+6.
  -->
 <!--
 表格元素总结：
-1.表格的元素是table；2.表格行使用tr标签表示；3.表格数据使用td标签包裹；4.border属性表示表格的边框重度值；
-5.表头th元素默认是平行排列，如果需要垂直排列需要和td结合来使用；6.表格的标题使用元素caption；7.对于th元素，横向跨两行的元素
-是colspan,垂直跨两行的元素是rowspan；8.单元格边距cellpadding，这个边距使用在table元素中；9.单元格间距cellspacing，这个间距
-指单元格之间的距离；10，背景颜色和背景图片分别是属性bgcolor和background，这个两个属性是全局属性；11，表格可以和frame结合使用
+1.表格的元素是table；
+2.表格行使用tr标签表示；
+3.表格数据使用td标签包裹；
+4.border属性表示表格的边框重度值；
+5.表头th元素默认是平行排列，如果需要垂直排列需要和td结合来使用；
+6.表格的标题使用元素caption；
+7.对于th元素，横向跨两行的元素是colspan,垂直跨两行的元素是rowspan；
+8.单元格边距cellpadding，这个边距使用在table元素中；
+9.单元格间距cellspacing，这个间距指单元格之间的距离；
+10，背景颜色和背景图片分别是属性bgcolor和background，这个两个属性是全局属性；
+11，表格可以和frame结合使用
+12.col和colgroup都是设置列的功能表，一个针对单个列一个一组列，但是两个都没有试验成功？
 -->
 <!-- 
 列表总结：
@@ -259,13 +271,15 @@ Number(localStorage.getItem("lastname"));
  -->
 <!-- 
 表单输入总结：
+0.form提供一个块级元素，可以进行fieldset,textarea,input,legend,label,会产生折行
 1.表示表单输入的元素是input，其总是被包裹在form元素中
 2.input元素的属性包括type表示是什么类型文本，有text，password，checkbox(复选框),button(表示按键按钮元素)，
-radio单选框(check="check"表示未选时定位的选框)，；name表示输入的数据名称
+radio单选框(check="check"表示未选时定位的选框)，；name表示输入的数据名称，datalist元素和list属性绑定为input元素的输入构建输入列表
+3.button属性必须含有type属性，IE为button，其余为submit；
 3.下拉列表使用form，select和option三个元素进行定义；select需要属性name，option需要属性value(selected="selected表示未选
 时定位的选框")
 4.textarea 表示一个文本框输入区域的元素，其中cols表示横向的单元格间距，raws表示纵向的单元格间距，一个textarea中只能有一个textarea
-5.form fieldset legend 三个元素共同构成了一个拥有一级和二级标题的输入趋于
+5.form fieldset legend 三个元素共同构成了一个拥有一级和二级标题的输入区域
 6.表单实例的内容继续总结；
  -->
 <!-- 
@@ -284,6 +298,7 @@ radio单选框(check="check"表示未选时定位的选框)，；name表示输�
 <!-- 
 声音图像元素总结：
 1、audio有六个属性，支持全局属性和事件属性
+2.canvas元素构成了一个图像容器，需要是用脚本来构造图像
  -->
 
 
@@ -301,7 +316,12 @@ radio单选框(check="check"表示未选时定位的选框)，；name表示输�
 
 <body>
     <div>
-        <a href="http://www.w3school.com.cn/tags/index.asp" >练习到了此页面的button</a>
+        <a href="http://www.w3school.com.cn/tags/index.asp">练习到了此页面的div</a>
+        <p>今天状态是处于中等水平，还不错</p>
+        <p>今天状态是处于中等水平，还不错</p>
+
+
+
     </div>
 
 </body>
