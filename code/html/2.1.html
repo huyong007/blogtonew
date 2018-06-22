@@ -204,7 +204,9 @@ Number(localStorage.getItem("lastname"));
 <!-- HTML用法总结 -->
 <!--
 其他：
-仅仅把标题标签用于标题文本，不要仅仅为了产生粗体而使用它们，请使用其他标签或css代替
+1.仅仅把标题标签用于标题文本，不要仅仅为了产生粗体而使用它们，请使用其他标签或css代替
+2.我们必须把我们的小把戏放到一边，然后开始根据元素的语义来使用它们，而不是根据它们看上去的样子
+3.我们只是希望展示文档结构和可视表达是两个完全不同的事物，并且结构化元素应被用来转换文本，而不是强加显示效果
 -->
 <!-- 文本居中排列的属性是align ，这个对象属性有三个属性：center,right,left-->
 <!--水平线和折行分别是<hr/><br/>  -->
@@ -219,7 +221,7 @@ Number(localStorage.getItem("lastname"));
 5.sub是将包裹文本悬浮于正常行之下并变小，sup正好相反；
 10.文本字体从右往左开始显示的元素bdo配合dir="rtl使用才有效果；
 12.文本字体中间加线表删除的元素del，加下划线的ins
---> 
+-->
 <!--
 一些特殊的文本格式表达元素（最好是使用样式表来完成整个任务）：
 6.pre是显示代码最好的元素，使得格式不变；
@@ -309,17 +311,27 @@ radio单选框(check="check"表示未选时定位的选框)，；name表示输�
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap-grid.min.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <div>
+    <!--     <div>
         <a href="http://www.w3school.com.cn/tags/index.asp">练习到了此页面的div</a>
-        <p>今天状态是处于中等水平，还不错</p>
-        <p>今天状态是处于中等水平，还不错</p>
+<div id="wrapper"> -->
 
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <!-- Optional: clear the XS cols if their content doesn't match in height -->
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+    </div>
 
 
     </div>
