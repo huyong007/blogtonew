@@ -28,25 +28,38 @@ var SimpleRange =
     ) */
 
 //数组的复制
-console.log("f1");
 
-var x = [1, 2, 3, 4, 5];
+
+/* var x = [1, 2, 'a', 4, 5];
 console.log(x[1]);
+console.log(typeof (x[1]));
 
-console.log("f2");
-var y =  [];
-console.log("f3");
+console.log(x[2] + x.length ); */
+/* console.log(10 + 'object');
+console.log('7' + '3');
+var n = 1 - 'x';
+console.log(n);
+console.log(n+'objects'); */
 
-    console.log("f4");
-    for (var i = 0; i < x.length; i++) {
-        console.log("f5");
-         y[i] = x[i];
-    }
-    console.log("f6");
-    console.log(y[1]);
-    console.log("f7");
-    console.log(y);
-    console.log("f8");
+
+
+
+
+
+
+
+/* 
+var y = [];
+
+console.log("f4");
+var i = 0;
+for (; i < x.length;) {
+    y[i] = x[i]; //赋值表达式的写法，左值和右值要搞清楚
+    i = i + 1;
+}
+console.log(y[1]);
+
+console.log(y); */
 
 /* var a = ['a', 'b', 'c'];
 var b = [];
@@ -61,18 +74,55 @@ console.log(b);
     }
 }
 fuzhiArrays(x)(y); */
-console.log("f9");
 
-console.log("f10");
 //数组的比较
-/* function equalArray(x,y) {
-    if(x.length!=y.length){
+/* function equalArray(x, y) {
+    if (x.length != y.length) {
         return "x,y不相等"
     };
-    for(i=0;i<x.length;i++){
-        if(x[i]!=y[i]){
+    for (i = 0; i < x.length; i++) {
+        if (x[i] != y[i]) {
             return "不相等"
         }
     };
-    return "相等"
-} */
+    console.log("相等");
+
+}
+equalArray(x, y); */
+
+
+/* var d = new Date(201, 0, 1);
+console.log(d.valueOf());
+
+console.log([1, 2, 3].toString());
+console.log((function (x) {
+    f(x);
+}).toString());
+
+console.log(new Date(2010, 0, 1).toString()); */
+/* console.log([0].toString());
+console.log(['a'].toString()); */
+/* var now = new Date();
+console.log(typeof(now + 1));
+console.log(typeof(now - 1));
+console.log(now == now.toString());
+console.log(now > now - 1);
+console.log(now-1);
+console.log(Number(now)); */
+
+for (let i = 0,j=10; i<10; i++,j--) {
+console.log(i*j);
+
+}
+/* const i = 1;
+console.log(i); */
+
+
+
+
+
+
+
+
+
+
