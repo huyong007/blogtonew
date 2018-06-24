@@ -8,9 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
+    <!-- 开发环境版本，包含了用帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
+
     <div class="list-group">
         <a href="/post/5b2e18af90919f7d04220b5b" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex">
@@ -8013,21 +8016,41 @@
             </div>
         </a>
     </div>
+
+    <div id='app'>
+        {{postsList}}
+    </div>
+
 </body>
 <script>
     const title = document.getElementsByTagName("h6");
     const url = document.getElementsByTagName("a");
-    for (let i = 0, j = 0; i < title.length, j < url.length; i++ , j++) {
+    for (let i = 0, j = 0, k = 0; i < title.length, j < url.length; i++ , j++ , k++) {
 
-        document.write("<ul>" + url[j].getAttribute("href") + ":" + title[i].innerHTML + "</ul>");
+        document.write("<ul>" + "http://xugaoyang.com" + url[j].getAttribute("href") + ":" + title[i].innerHTML + k + "</ul>");
     }
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            postsList: [],
+        },
+        mounted: function () {
+            var a = [1, 2, 3];
+            vm.postsList = a[0];
 
-    var text = document.getElementsByTagName("a")
-    for (var i = 0; i < text.length; i++) {
-        document.write(text[i].getAttribute("href"));
+        }
+    })
 
-    }
 
 </script>
+<!-- 这个小项目是首先通过页面F12加载出老师发现页的所有数据，然后copy走div元素下的所有内容，
+之后放在这个文件夹下面，
+然后使用dom操作拿到文章对应的id；
+然后通过for循环和文章名字拼接在一起，
+惊喜是for循环初始化了三个变量，哈哈，捣鼓着真好玩，
+下一步是准备使用vue把数据渲染到一个节点上，第一次没搞成功，继续整，
+我开始想的是直接在页面里面操作拿到数据再用vue渲染出来，好像这样不行吧，
+我为什么不把数据存起来然后再用vue渲染呢 -->
 <!-- http://xugaoyang.com/post/5b2e18af90919f7d04220b5b -->
+
 </html>
