@@ -162,7 +162,7 @@ function getName() {
 
 };
 function getBirthday(name) {
-    return new Promise(function (resolve,reject) {
+    return new Promise(function (resolve, reject) {
         setTimeout(() => {
             if (name && name.includes('wang xia')) {
                 resolve(name + ' .芳龄18');
@@ -178,7 +178,7 @@ function getBirthday(name) {
 getName().then(function (name) {
     getBirthday(name).then(function (message) {
         console.log(message);
-    } );
+    });
 });
 /*promise跟传统的异步写法有三点区别：
 - 从关注对象也就是面向对象到面向流程的来进行编程
@@ -188,3 +188,29 @@ getName().then(function (name) {
 - 说到底就是用一些高级的概念创造一个高级的工具，干同样的活，就像以前
 用水利发电，自然界的看到到的力量，然后到核能发电
 */
+function getName() {
+    return new Promise(function (resolve) {
+        setTimeout(() => {
+            resolve("wang xia ");
+        }, 100);
+    })
+}
+
+function getBirthday() {
+    return new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            if (name && name.includes('wang xia')) {
+                resolve(name + " .芳龄18")
+            } else {
+                reject("鬼知道是谁");
+            };
+        }, 100);
+    });
+};
+
+getName().then(function (name) {
+    getBirthday(name).then(function (message) {
+        console.log(message);
+        
+    });
+})

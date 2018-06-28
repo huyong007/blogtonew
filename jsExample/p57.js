@@ -73,7 +73,7 @@ function counter(n) {
         get count() { console.log(n);return n++; },
         set count(m) {
             console.log(n);
-            console.log(m);
+            /* console.log(m); */
             
             
             if (m >= n) n = m;
@@ -86,6 +86,6 @@ var c = counter(1000);
 
 console.log(c.count);
 console.log(c.count = 2000);
-console.log(c.count = 20010);//n=20010
-console.log(c.count);
+/* console.log(c.count = 20010);//n=20010
+console.log(c.count); */
 
