@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+    <script src="./component.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ol>
+            <todo-item a="hello vue"></todo-item>
+            <todo-item a="hello js"></todo-item>
+            <li v-for="item in likes">{{ item.text }}</li>
+        </ol>
+
+    </div>
+
+</body>
+
+<script>
+
+    var app = new Vue({
+        el: "#app",
+        data: {
+            likes: [
+                { id: 0, text: "apple" },
+                { id: 1, text: "orange" },
+                { id: 2, text: "banana" }
+            ],
+        }
+    })
+</script>
+
+</html>
