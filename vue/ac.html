@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<spam>{{ msg }}</spam>
+	</div>
+</body>
+<script>
+	var vm = new Vue({
+		el: "#app",
+		data: {
+			msg: "good"
+		}
+	})
+</script>
+<p>{{ message/cat()/news}}</p>
+<p v-if="seen"></p>
+<p v-bind:title="seen"></p>
+<button v-once></button>
+<p v-for="item in todos">{{item.text}}</p>
+<button v-on:click="reverseMessage"></button>
+<input v-mode="news">
+<!-- 
+<input v-mode="news">
+<p v-if="seen"></p>
+<p v-for="item in todos">{{item.text}}</p>
+-->
+<!-- var data = { a: 1 }
+var vm = new Vue({
+  el: '#example',
+  data: data
+})
+
+vm.$data === data // => true
+vm.$el === document.getElementById('example') // => true
+
+// $watch 是一个实例方法
+vm.$watch('a', function (newValue, oldValue) {
+  // 这个回调将在 `vm.a` 改变后调用
+}) -->
+</html>
+<!-- 最近几天学习vue主要是学习了v-once,v-on,v-for,v-bind,v-if,v-model,
+{{}},creat,computed,methods,creat?, component,-->
+<!-- props,template -->
+<!-- created,v-html -->
+<!-- methods和computed的区别 -->
+<!-- watch,get,set -->
+<script>
+	vm = new Vue({
+		el: "#app",
+		data: {
+			message: "love",
+			msg: "like"
+		},
+		methods: {
+			cat: function () {
+				//do something
+			}
+		},
+		computed: {
+			news: function () {
+				//do something
+			}
+		}
+	})
+
+</script>
