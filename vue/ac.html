@@ -7,24 +7,28 @@
 
 <body>
 	<div id="app">
-		<spam>{{ msg }}</spam>
+		<div v-bind:style="{
+			color:whichColor,fontSize:whichSize+ 'px'}">
+			Nanjing is rain</div>
 	</div>
 </body>
 <script>
-	var vm = new Vue({
+	vm = new Vue({
 		el: "#app",
 		data: {
-			msg: "good"
+			whichColor: "red",
+			whichSize: 10
 		}
 	})
+
 </script>
-<p>{{ message/cat()/news}}</p>
+<!-- <p>{{ message/cat()/news}}</p>
 <p v-if="seen"></p>
 <p v-bind:title="seen"></p>
 <button v-once></button>
 <p v-for="item in todos">{{item.text}}</p>
 <button v-on:click="reverseMessage"></button>
-<input v-mode="news">
+<input v-mode="news"> -->
 <!-- 
 <input v-mode="news">
 <p v-if="seen"></p>
@@ -43,6 +47,7 @@ vm.$el === document.getElementById('example') // => true
 vm.$watch('a', function (newValue, oldValue) {
   // 这个回调将在 `vm.a` 改变后调用
 }) -->
+
 </html>
 <!-- 最近几天学习vue主要是学习了v-once,v-on,v-for,v-bind,v-if,v-model,
 {{}},creat,computed,methods,creat?, component,-->
@@ -70,3 +75,23 @@ vm.$watch('a', function (newValue, oldValue) {
 	})
 
 </script>
+<!-- created用于一个实例被创建之后执行代码 -->
+
+<!-- 那么多的answer如何做到各处正确的回答的，return什么时候需要，
+ -->
+<!-- active: this.isActive && !this.error, 
+	'text-danger': this.error && this.error.type === 'fatal' 
+什么意思？-->
+
+
+<!-- v-bind针对style和class的几种用法，重点词汇是：对象，规则：易读，
+ -->
+<!-- 
+ Handlebars 模板 是什么？
+{{#if ok}}
+<h1>Yes</h1>
+{{/if}} -->
+
+<!-- 一个字符串什么时候加双引号，什么
+时候不加双引号 -->
+<!--  -->
