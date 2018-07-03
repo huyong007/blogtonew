@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <titlev-for</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+</head>
+<body>
+<div id="watch-example">
+    <p>
+        Ask  a yes/no question:
+        <input v-model="question">
+        
+    </p>
+    <p>{{ answer }}</p>
+</div> 
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+<script>
+var watchExampleVm=new Vue({
+    el:'#watch-example',
+    data:{
+        question:'',
+        answer:'i cannot give you an answer until you ask a question!'
+
+    },
+    watch:{
+        question:function(newQuestion,oldQuestion){
+            this.answer='waiting for you to stop typing///'
+            this.debouncedGetAnswer()
+        }
+    },
+    created:function(){
+        this.debouncedGetAnswer=_.debounce(this.getAnswer,500)
+
+    },//creat 和watch是如何工作的，
+    methods:{
+        getAnswer:function(){
+            if(this.question.indexOf('?')===-1){
+                this.answer='Questions usually contain a question mark.'
+                return 
+            }
+            this.answer='Thinking...'
+            var vm=this//什么意思，这个是干嘛的
+            axios.get('https://yesno.wtf/api')
+            .then(function(response){
+                vm.answer=_.capitalize(response.data.answer)
+
+            })
+            .catch(function(error){
+                vm.answer='Error! Could not reach the API.'+error;
+                
+            })
+        }
+    }
+})
+</script>
+</html>

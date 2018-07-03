@@ -7,19 +7,42 @@
 
 <body>
 	<div id="app">
-		<div v-bind:style="{
-			color:whichColor,fontSize:whichSize+ 'px'}">
-			Nanjing is rain</div>
-	</div>
+		<button v-on:click="click">click</button>
+
+		<button v-on:click="order(num)">命令</button>
+		<button v-on:click="greet">命令</button>
 </body>
 <script>
-	vm = new Vue({
+	var vm = new Vue({
 		el: "#app",
 		data: {
-			whichColor: "red",
-			whichSize: 10
+			count: 0,
+			num: 0,
+			data: 0,
+			word: "vue.js"
+		},
+		methods: {
+			order: function (num) {
+				this.num += 1;
+				alert("you have click" + " " + this.num + " " + "times");
+			},
+			click: function () {
+				alert("hello " + this.word);
+				if (event) {
+					alert(event.target.tagName);
+				}
+			}
+		},
+		computed: {
+			greet: function () {
+				alert("hello " + this.word);
+				if (event) {
+					alert(event.target.tagName);
+				}
+			}
 		}
-	})
+	});
+
 
 </script>
 <!-- <p>{{ message/cat()/news}}</p>
@@ -55,7 +78,7 @@ vm.$watch('a', function (newValue, oldValue) {
 <!-- created,v-html -->
 <!-- methods和computed的区别 -->
 <!-- watch,get,set -->
-<script>
+<!-- <script>
 	vm = new Vue({
 		el: "#app",
 		data: {
@@ -74,7 +97,7 @@ vm.$watch('a', function (newValue, oldValue) {
 		}
 	})
 
-</script>
+</script> -->
 <!-- created用于一个实例被创建之后执行代码 -->
 
 <!-- 那么多的answer如何做到各处正确的回答的，return什么时候需要，
@@ -94,4 +117,5 @@ vm.$watch('a', function (newValue, oldValue) {
 
 <!-- 一个字符串什么时候加双引号，什么
 时候不加双引号 -->
-<!--  -->
+<!-- v-on 点击事件之后给得响应，使用computed没有 
+实验成功 -->

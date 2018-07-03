@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>vue v-for learn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+</head>
+
+<body>
+<div id="todo-list-example">
+    <form v-on:submit.prevent="addNewTodo"><!-- 这个是什么意思？ -->
+        <label for="new-todo">Add a todo</label>
+        <input 
+        v-model="newTodoText"
+        id="new-todo"
+        placeholder="e.g.Feed the cat">
+        <button>Add</button>
+    </form>
+    <ul>
+        <li 
+        is="todo-item"
+        v-for="(todo,index) in todos"
+        v-bind:key="todo.id"
+        v-bind:title="todo.title"
+        v-on:remove="todos.splice(index,1)"
+        ></li>
+    </ul>
+</div>
+</body>
+<script>
+Vue.component('todo-item',{
+    template:'\
+    <li>\
+    {{ title }}\
+    <button v-on:click="$emit(\'remove\')">Remove</button>\
+    </li>\
+    ',
+    props:['title']
+})
+
+    new Vue({//为什么开始没var vm这个对象
+        el:'#todo-list-example',
+        data:{
+            newTodoText:'',
+            todos:[
+                {
+                    id: 1,
+                    title: 'do the dishes',
+                    },
+                    {
+                        id:2,
+                        title:'take out the',
+                    },
+                    {
+                        id:3,
+                        title:'fkaljkgl',
+                    }
+],
+nextTodoId:4//这个是怎么整的，这算是直接给一个vue的实例对象吗？
+        },
+        methods:{
+            addNewTodo:function(){
+                this.todos.push({
+                    id:this.nextTodoId++,
+                    title:this.newTodoText
+                })
+                this.newTodoText=''
+            }
+        }
+    })
+</script>
+<!-- 
+1，第二遍书写，首先是template的格式是一个对象的写法
+2.对于template中格式的书写是按照正常的HTML个是写，最后加上‘\’来作为结束
+3.对于这种难的例子，没有其他办法每天看一遍，看多了就像那篇文章一样就看会了 
+
+
+-->
+
+</html>
