@@ -1,0 +1,108 @@
+<head>
+  <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+  <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  body {
+  margin:10px;
+  padding:20px;
+}
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <p>hello ,Vue!</p>
+          <input v-model.lazy.number="age"  placeholder="edit me" />
+          <p>words is :{{ age }}</p>
+          <input v-model.lazy.trim="message"  placeholder="edit" />
+          <p>words is :{{ message }}</p>
+        </div>
+        <div class="col-md-2">
+          <span>Multiline message:</span>
+          <p style="white-space:pre-line">{{ msg }}</p>
+          <textarea v-model="msg" placeholder="add multiple lines"></textarea>
+        </div>
+        <div class="col-md-1">
+          <input type="checkbox" id="checkbox" v-model="checked" />
+          <label for="checkbox">{{ checked }}</label>
+        </div>
+        <div class="col-md-2">
+          <input type="checkbox" id="love" value="a" v-model="checkname" />
+          <label for="love">love</label>
+          <input type="checkbox" id="like" value="l" v-model="checkname" />
+          <label for="like">like</label>
+          <input type="checkbox" id="good " value="good" v-model="checkname " />
+          <label for="good ">good</label>
+          <input type="checkbox" id="better " value="better " v-model="checkname " />
+          <label for="better">better</label>
+          <br/>
+          <span>selected names is :{{ checkname }}</span>
+        </div>
+        <div class="col-md-1">
+          <input type="radio" id="mike" value="mike" v-model="oneselect" />
+          <span for="mike">mike</span>
+          <br/>
+          <input type="radio" id="nike" value="nike" v-model="oneselect" />
+          <span for="mike">nike</span>
+          <p>this is :{{ oneselect }}</p>
+        </div>
+        <div class="col-md-1">
+          <select v-model="mutipaleSelect">
+            <option disable value=" ">请选</option>
+            <option value="love" >1</option>
+            <option >2</option>
+          </select>
+          <p>select:{{ mutipaleSelect }}</p>
+        </div>
+        <div class="col-md-1">
+          <select v-model="moreSelect" multiple style="width:50px">
+            <option value="dog">3</option>
+            <option >1</option>
+            <option >2</option>
+          </select>
+          <p>select:{{ moreSelect }}</p>
+        </div>
+        <div class="col-md-1">
+          <select v-model="last">
+            <option v-for="item in items" v-bind:value="item.name" >
+              {{ item.good }}
+              </option>
+          </select>
+          <span>select:{{ last }}</span>
+        </div>
+        <div class="col-md-1">
+          <input type="checkbox" v-model="toggle" true-value="yes" false-value="no"/>
+          <span>{{ toggle }}</span>
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+new Vue({
+  el: "#app",
+  data: {
+    message:'',
+    age: "",
+    msg:" ",
+    checked:"false",
+    checkname:[],
+    oneselect:'',
+    mutipaleSelect:'',
+    moreSelect:[ ],
+    items: [
+      {good:"d",name:"cat"},
+      {good:"m",name:"mon"},
+      {good:"s",name:"snk"},
+    ],
+    last:'dog',
+    toggle:'no',
+  }
+});
+
+</script>
