@@ -1,0 +1,33 @@
+<html>
+<head>
+  <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button v-for="title in titles" v-bind:key="title" v-on:click="currentTitle=title">{{ title }}</button>
+    <component v-bind:is="change"></component>
+</body>
+<script>
+Vue.component('tab-home',{
+  template:`<div>welcome you!</div>`
+}),
+Vue.component('tab-list',{
+  template:`<div>1 2 3</div>`
+}),
+Vue.component('tab-ask',{
+  template:`<div>do you know how to learn js?</div>`
+}),
+new Vue({
+  el:'#app',
+  data:{
+    currentTitle:'Home',
+    titles:['Home','List','Ask']
+  },
+  computed:{
+    change:function(){
+      return 'tab-'+ this.currentTitle.toLowerCase();
+    }
+  }
+})
+</script>
+</html>
