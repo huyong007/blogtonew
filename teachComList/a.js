@@ -52,13 +52,19 @@ b=list.map(function (x) {
 });
  */
 
-let list = ['100', '99', '98'];
+let list = [100, 99, 98];
 
 for (let i = 0; i < list.length; i++) {
-    console.log('第' + (i+1) + "名：" + list[i]);
+    console.log('第' + (i + 1) + "名：" + list[i]);
 }
 
-list.forEach(function (v,i) {
-    console.log('第'+(i+1)+'名:'+v);
-    
+list.forEach(function () {
+    let v = v + 1;
+    a[i] = v;
+    console.log('第' + (i + 1) + '名:' + v);
+
+
 })
+
+/* let [bar,foo]=false;
+console.log(bar); */
