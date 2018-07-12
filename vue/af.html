@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>computed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <NotFound></NotFound>
+        <Home></Home>
+        <About></About>
+
+    </div>
+    <script>
+        const NotFound = { template: '<p>Page not found</p>' }
+        const Home = { template: '<p>home page</p>' }
+        const About = { template: '<p>about page</p>' }
+
+        const routes = {
+            '/': Home,
+            '/about': About
+        }
+
+        new Vue({
+            el: '#app',
+            data: {
+                currentRoute: window.location.pathname
+            },
+            computed: {
+                ViewComponent() {
+                    return routes[this.currentRoute] || NotFound
+                }
+            },
+            render(h) { return h(this.ViewComponent) }
+        })
+    </script>
+</body>
+
+</html>
