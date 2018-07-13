@@ -12,38 +12,93 @@
             margin: 20px;
             padding: 20px;
         }
+
+        .content {
+            display: block;
+            width: 300px;
+            height: 400px;
+            color: olive;
+            background-color: mistyrose;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <NotFound></NotFound>
-        <Home></Home>
-        <About></About>
-
+        <p>展示vue的style内容演练</p>
+        <div class="content">
+            <p>
+                Ask a yes/no question:
+                <input v-model="question">
+            </p>
+            <p>{{ answer }}</p>
+        </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <script>
-        const NotFound = { template: '<p>Page not found</p>' }
-        const Home = { template: '<p>home page</p>' }
-        const About = { template: '<p>about page</p>' }
-
-        const routes = {
-            '/': Home,
-            '/about': About
-        }
-
-        new Vue({
-            el: '#app',
+        var app = new Vue({
+            el: "#app",
             data: {
-                currentRoute: window.location.pathname
+                question: '',
+                answer: 'I cannot give you an answer until you ask a question!'
             },
-            computed: {
-                ViewComponent() {
-                    return routes[this.currentRoute] || NotFound
+            watch: {
+                question: function (newQuestion, oldQuestion) {
+                    this.answer = 'Waiting for you to stop typing...'
+                    
+                    this.Answer()
                 }
             },
-            render(h) { return h(this.ViewComponent) }
-        })
+             created: function () {
+                 //created这个钩子是在挂载还没开始的时候调用，把调用api的方法写在
+                 //可以有效的控制api调用对于页面的影响，这是第一点，第二点：
+                 //_.debounce,这个方法的使用是用到了一个库，这个库可以对于
+                 //this.Answer强势多少秒之后调用，同时时间是可以控制的，还有第三个参数
+                this.Answer = _.debounce(this.getAnswer, 5000)
+            },
+            methods: {
+                getAnswer: function () {
+                    console.log('--------');
+
+                }
+            }
+        });
+        var a = {
+            x: 1,
+            y: 2,
+            get r() {
+                return this.x + this.y;
+            },
+            set r(newValue) {
+                var oldValue = this.x = this.y;
+                this.x = newValue + oldValue;
+                this.y = oldValue + newValue;
+            },
+        };
+        var p = {
+            x: 1.0,
+            y: 1.0,
+            get r() {
+                //r相当于的对象p的一个属性，他的值通过p.r对应的get方法
+                //拿到，设置他的值通过set方法p.r=xxx；如果去掉get属性
+                //set方法仍然奏效，但是拿不到p.r的值了，这一点和vue中的
+                //用法一样
+                return Math.sqrt(this.x * this.x + this.y * this.y);
+            },
+            set r(newvalue) {
+                //oldvalue需要提前声明好
+                var oldvalue = Math.sqrt(this.x * this.x + this.y * this.y);
+                var ratio = newvalue / oldvalue;
+                this.x *= ratio;
+                this.y *= ratio;
+            },
+            get theta() {
+                return Math.atan2(this.y, this.x);
+            },
+        };
     </script>
 </body>
 
