@@ -48,15 +48,15 @@
             watch: {
                 question: function (newQuestion, oldQuestion) {
                     this.answer = 'Waiting for you to stop typing...'
-                    
+
                     this.Answer()
                 }
             },
-             created: function () {
-                 //created这个钩子是在挂载还没开始的时候调用，把调用api的方法写在
-                 //可以有效的控制api调用对于页面的影响，这是第一点，第二点：
-                 //_.debounce,这个方法的使用是用到了一个库，这个库可以对于
-                 //this.Answer强势多少秒之后调用，同时时间是可以控制的，还有第三个参数
+            created: function () {
+                //created这个钩子是在挂载还没开始的时候调用，把调用api的方法写在
+                //可以有效的控制api调用对于页面的影响，这是第一点，第二点：
+                //_.debounce,这个方法的使用是用到了一个库，这个库可以对于
+                //this.Answer强势多少秒之后调用，同时时间是可以控制的，还有第三个参数
                 this.Answer = _.debounce(this.getAnswer, 5000)
             },
             methods: {
@@ -99,6 +99,9 @@
                 return Math.atan2(this.y, this.x);
             },
         };
+        //通过这次学习，我发现听了老师的课程之后再回头看
+        //vue的教程体会会更深，了解的会更多，
+        //还是需要边学习，边巩固基础，这样会提高更快
     </script>
 </body>
 
