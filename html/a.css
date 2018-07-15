@@ -7,18 +7,22 @@
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: red;
-  color: black;
+  background-color: black;
+  color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  /* 定位 */
   position: absolute;
   z-index: 1;
-  top: -5px;
-  right: 105%;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  /* 淡入 - 1秒内从 0% 到 100% 显示: */
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+  opacity: 1;
 }
