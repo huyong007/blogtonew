@@ -41,3 +41,10 @@ function likes(names) {
 likes(names);
 /*在最后一个else的输出中names.length-2 和(names.length-2)两者会得到不同的结果，一个长字符会把前者认定为三个字符组成的，进而进行
 字符中间的加减转换，*/ 
+
+function extend(o,p){
+    for(pro in p){
+        o[prop]=p[prop];
+    }
+    return o;
+}
