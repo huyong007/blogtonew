@@ -10,30 +10,24 @@
 </head>
 
 <body>
-    <div id="app">
-        <p>{{ message }}</p>
-        <button v-on:mousemove="reverseMessage">逆转消息</button>
+    <div id="example">
+        <p>{{ a }}</p>
+        <!-- 这里的 `foo` 不会更新！ -->
+        <button v-on:click="a = 'baz'">Change it</button>
     </div>
 </body>
 <script>
-    var app = new Vue({
-        el: '#app',
+    new Vue({
+        el:'#example',
         data: {
-            message: 'Hello Vue.js!'
+            a: 1
         },
-        methods: {
-            reverseMessage: function () {
-                this.message = this.message.split('').reverse().join('')
-            }
+        beforeUpdate() {
+             console.log('a is: ' + this.a)
         },
-        mounted() {
-            setTimeout(() => {
-                return ;
-            }, 3000);
-
-        },
-    });
+    })
 
 </script>
+
 
 </html>
