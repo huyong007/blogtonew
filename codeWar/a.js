@@ -40,11 +40,20 @@ function likes(names) {
 }
 likes(names);
 /*在最后一个else的输出中names.length-2 和(names.length-2)两者会得到不同的结果，一个长字符会把前者认定为三个字符组成的，进而进行
-字符中间的加减转换，*/ 
-
-function extend(o,p){
-    for(pro in p){
-        o[prop]=p[prop];
+字符中间的加减转换，*/
+var o = { x: 1, y: 3 }; var p = { x: 3, a: 4 };
+var q = {};
+function extend(m, n) {
+    for (prop in n) {
+        m[prop] = n[prop];
     }
-    return o;
-}
+    return q;
+};
+function union(m, n) {
+     extend(extend(q, m), n);
+     console.log(q);
+     
+};
+
+union(o,p)
+
