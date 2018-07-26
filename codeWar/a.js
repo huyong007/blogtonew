@@ -41,19 +41,56 @@ function likes(names) {
 likes(names);
 /*在最后一个else的输出中names.length-2 和(names.length-2)两者会得到不同的结果，一个长字符会把前者认定为三个字符组成的，进而进行
 字符中间的加减转换，*/
-var o = { x: 1, y: 3 }; var p = { x: 3, a: 4 };
-var q = {};
-function extend(m, n) {
-    for (prop in n) {
-        m[prop] = n[prop];
+/* var objects = [{ x: 1, a: 1 }, { y: 2, a: 2 }, { z: 3, a: 3 }];
+function extend(o, p) {
+    for (prop in p) {
+        o[prop] = p[prop];
     }
-    return q;
+    return o;
 };
-function union(m, n) {
-     extend(extend(q, m), n);
-     console.log(q);
-     
+function union(o, p) {
+    console.log(o);
+    console.log(p);
+  return   extend(extend({}, o), p);
 };
+ 
+var leftunion = objects.reduce(union);
+console.log(leftunion);
+var rightunion=objects.reduceRight(union);
+console.log(rightunion); */
+/* let list = [1, 2, 3];
+var sum = list.reduce(function (x, y) { return x + y },0);
+console.log(sum);
+let s = 0;
+list.forEach(function (item) { return s += item });
+console.log(s);
+let m =0;
+for(let i=0;i<list.length;i++){
+    m +=list[i];
+};
+console.log(m); */
+/* 语义更清晰，扩展性更好， */
+/* const array1=[[0,1],[2,3],[4,5]].reduceRight(
+    (previousValue,currentValue)=>previousValue.concat(currentValue)
 
-union(o,p)
+);
+console.log(array1); */
+
+var arr=[1,[2,[3,4]]];
+
+function flatten(arr){
+
+}
+
+
+
+
+
+
+
+
+
+
+console.log(flatten(arr));//[1,2,3,4]
+
 
