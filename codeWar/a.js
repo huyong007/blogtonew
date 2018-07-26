@@ -76,21 +76,36 @@ console.log(m); */
 );
 console.log(array1); */
 
-var arr=[1,[2,[3,4]]];
 
-function flatten(arr){
+var arr = [1, [2, [[9, 0], 3, [2, 3]]]];
+/* 方法一：function flatten(arr) {
+    var result = [];
+    
+    for (let i = 0;  i < arr.length; i=i+1) {
+        console.log(arr[i]);
+        console.log('flag1');
+        
+        if (Array.isArray(arr[i])) {
+            result = result.concat(flatten(arr[i]));
+            console.log(result);
+            console.log('flag2');
 
+        } else {
+            result.push(arr[i]);
+            console.log(result);
+            console.log('flag3');
+            
+        }
+    }
+    console.log('flag4');
+    return result;
 }
 
-
-
-
-
-
-
-
-
-
-console.log(flatten(arr));//[1,2,3,4]
-
+console.log(flatten(arr));//[1,2,3,4] */
+/* 方法二： */
+var arr = [1, [2, [[9, 0], 3, [2, 3]]]];
+var result = arr.toString().split(',').map(function (x) {
+    return Number(x);
+})
+console.log(result);
 
