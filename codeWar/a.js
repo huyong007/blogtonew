@@ -103,9 +103,43 @@ var arr = [1, [2, [[9, 0], 3, [2, 3]]]];
 
 console.log(flatten(arr));//[1,2,3,4] */
 /* 方法二： */
-var arr = [1, [2, [[9, 0], 3, [2, 3]]]];
+/* var arr = [1, [2, [[9, 0], 3, [2, 3]]]];
 var result = arr.toString().split(',').map(function (x) {
     return Number(x);
 })
-console.log(result);
+console.log(result); */
+/* function doAdd(num1, num2) {
+    console.log(num2);
+    arguments[1] = 10;
+    console.log(arguments[0] + num2);
+    console.log(num2);
+    
+}
+doAdd(10,3); */
+/* 
+var color = 'blue';
+function chageColor() {
+    if (color === 'blue') {
+        color = 'red';
+    } else {
+        color = 'blue';
+    }
+};
+chageColor();
+console.log('color is now ' + color);
+console.log('-----------------');
+var color = 'blue';
+function changeColor() {
+    var anotherColor = 'red';
+    console.log('second color is ' + color);
+    function swapColors() {
+        var tempColor = anotherColor;
+        anotherColor = color;
+        color = tempColor;
+        console.log(color);
 
+    }
+    swapColors();
+}
+changeColor();
+ */
