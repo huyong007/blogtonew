@@ -4,7 +4,8 @@
 </head>
 <body>
   <div id="app">
-    <button v-for="title in titles" v-bind:key="title" v-on:click="currentTitle=title">{{ title }}</button>
+    <button v-for="title in titles" v-bind:key="title" v-on:click="currentTitle=title">
+      {{ title }}</button>
     <component v-bind:is="change"></component>
 </body>
 <script>

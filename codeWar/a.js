@@ -143,3 +143,48 @@ function changeColor() {
 }
 changeColor();
  */
+/* function displayInfo(args){
+    var output ='';
+    if(typeof args.name=='string'){
+        output+='Name '+args.name+'\n';
+    }
+    if(typeof args.age=='number'){
+        output+='Age: '+args.age+'\n';
+    }
+    console.log(output);
+    
+}
+displayInfo({
+    name:'xiaohua',
+    age:29
+});
+displayInfo({
+    name:'xiaowang'
+}); */
+/* var addSomeNumber = function (num) {
+    return num + 10;
+};
+var addSomeNumber = function (num) {
+    return num + 20;
+};
+var result = addSomeNumber(20);
+console.log(result); */
+function createComparisonFunction(propertyName){
+    return function(object1,object2){
+        var value1=object1[propertyName];
+        var value2 = object2[propertyName];
+        if(value1<value2){
+            return -1;
+        }else if (value1>value2){
+            return 1;
+        }else{
+            return 0;
+        }
+    };
+}
+var data = [{ name: 'Zachary', age: 4 }, { name: 'Nicholas', age: 9}];
+data.sort(createComparisonFunction('name'));
+console.log(data[0].name);
+
+data.sort(createComparisonFunction('age'));
+console.log(data[0].name);
