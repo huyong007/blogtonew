@@ -169,7 +169,7 @@ var addSomeNumber = function (num) {
 };
 var result = addSomeNumber(20);
 console.log(result); */
-function createComparisonFunction(propertyName){
+/* function createComparisonFunction(propertyName){
     return function(object1,object2){
         var value1=object1[propertyName];
         var value2 = object2[propertyName];
@@ -187,4 +187,24 @@ data.sort(createComparisonFunction('name'));
 console.log(data[0].name);
 
 data.sort(createComparisonFunction('age'));
-console.log(data[0].name);
+console.log(data[0].name); */
+/* function sum(num1, num2) {
+    return num1 + num2;
+};
+function callSum1(num1, num2) {
+    return sum.apply(this, arguments);
+};
+function callSum2(num1, num2) {
+    return sum.apply(this, [num1, num2]);
+};
+
+console.log(callSum1(10,10));
+console.log(callSum2(10,10)); */
+/* var name;
+var likes=null;
+console.log(name==likes); */
+
+var a = { p: { x: 1 } }; var b = a.p;
+
+delete a.p.x;
+console.log(b.x);
