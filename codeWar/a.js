@@ -204,7 +204,73 @@ console.log(callSum2(10,10)); */
 var likes=null;
 console.log(name==likes); */
 
-var a = { p: { x: 1 } }; var b = a.p;
+/* var a = { p: { x: 1 } }; var b = a.p;
 
 delete a.p.x;
-console.log(b.x);
+console.log(b.x); */
+
+
+/* var Tom = new Object({ age: 30, height: 175 });
+console.log(Tom.age);
+var lily = Tom;
+console.log(lily.age);
+lily.sex = 'girl';
+console.log(Tom);
+ */
+/* function addTen(num){
+    num+=10;
+    return num;
+}
+var count=20;
+var result=addTen(count);
+console.log(count);
+console.log(result); */
+
+/* function setName(obj) {
+    obj.name = 'nike';
+}
+var person = new Object();
+setName(person);
+console.log(person.name);  */
+/* var person = new Object();
+var obj=new Object();
+var person = obj;
+obj.name = 'Tom';
+var obj=new Object();
+obj.name='lily';
+console.log(obj);
+
+console.log(person.name); */
+
+/* 函数参数传递引用类型值时，person在经历函数调用之后，obj把指针复制一份给了person
+之后作为局部变量的obj在函数内 */
+
+/* var obj1 = {
+    value: '111'
+};
+var obj2 = {
+    value: '222'
+};
+function changeStuff(obj) {
+    obj.value = '333';
+    obj = obj2;
+    return obj.value;
+}
+var foo = changeStuff(obj1);
+console.log(foo);// '222' 参数obj指向了新的对象obj2
+console.log(obj1.value);//'333' */
+var v1 = []
+var v2 = {};
+var v3 = {};
+function foo(v1, v2, v3) {
+    v1[1]=3;
+    v2.name='tom';
+    v1 = [1];
+    v2 = [2];
+    v3 = { a: 3 }
+}
+
+foo(v1, v2, v3);
+console.log(v1);
+console.log(v2);
+console.log(v3.a);

@@ -1,45 +1,42 @@
 <!DOCYTPE html>
 <html>
-
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
 </head>
+
 <body>
-<div id="app">
-    <button
-    v-for="bar in bars" 
-    v-on:click="currentbar=bar" >{{ bar }}</button>
+  <div id="app">
+    <button v-for="bar in bars" v-on:click="currentbar=bar">{{ bar }}</button>
     <keep-alive>
-      <component 
-       v-bind:is="changed"></component>
+      <component v-bind:is="changed"></component>
     </keep-alive>
 
 </body>
 
 <script>
-Vue.component('tab-home',{
-   data:function(){
-     return {
-       posts:[
-       {
-         id:1,
-         title:'good',
-         content:'<p>this is a sheep , good!</p>'
-       },
-        {
-         id:2,
-         title:'better',
-         content:'<p>this is a cat , btter!</p>'
-       },
-        {
-         id:3,
-         title:'best',
-         content:'<p>this is a dog , best!</p>'
-       }],
-       currentpost:null
-     } 
-  },template:`
+  Vue.component('tab-home', {
+    data: function () {
+      return {
+        posts: [
+          {
+            id: 1,
+            title: 'good',
+            content: '<p>this is a sheep , good!</p>'
+          },
+          {
+            id: 2,
+            title: 'better',
+            content: '<p>this is a cat , btter!</p>'
+          },
+          {
+            id: 3,
+            title: 'best',
+            content: '<p>this is a dog , best!</p>'
+          }],
+        currentpost: null
+      }
+    }, template: `
 <ul class="side-bar">
 <button 
 v-for="post in posts"
@@ -58,27 +55,31 @@ v-html="currentpost.content"></>
 
 
 
-` 
-}
-),
-  Vue.component('tab-active',{
-  template:`
+`
+  }
+  ),
+    Vue.component('tab-active', {
+      template: `
 <p>active is a test bar </p>
 `
-}),
+    }),
 
 
-new Vue({
-  el: "#app",
-  data: {
-    currentbar:'Home',
-    bars:['Home','Active']
-  },
-  computed:{
-    changed:function(){
-    return 'tab-'+this.currentbar.toLowerCase()
-  }
-  
-  }
-});
+    new Vue({
+      el: "#app",
+      data: {
+        currentbar: 'Home',
+        bars: ['Home', 'Active']
+      },
+      computed: {
+        changed: function () {
+          return 'tab-' + this.currentbar.toLowerCase()
+        }
+
+      }
+    });
+
+</script>
+
 </html>
+
