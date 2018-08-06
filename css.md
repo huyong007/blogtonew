@@ -1,8 +1,3 @@
-# 重点概念
-- 属性、属性值、css声明、css声明块、选择器、规则集、declaration、property、value、block、层叠算法、@规则、嵌套语句
-- [层叠和继承](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Cascade_and_inheritance)
-- @规则：元数据、条件信息、描述性信息
-
 #BFC
 - 什么是BFC？
 - 如何得到BFC
@@ -25,8 +20,20 @@
   - 形成条件：``display:inline/inline-table/inline-block``
 - css单位：px;em;rem;
 - 九种选择器；八种可继承样式；不可继承的样式五种
+- 九种选择器：
+  - :hover,*,li a ,ul>li,div+p,.class,div,p,#demo,(div,h1,p),(a[rel='external'])
+- 八种可以继承的样式 
+  - font-family,color,font-size,ul,li,dl,dd,dt
+- 不可继承的样式五种
+  - padding,margin,border,width,height,
 - css优先级算法：三种表达
+  - !important>内联>header中的style>css
+  - !important>id>class>tag
 - css权重的加法规则：
+  - 权重影响着元素的最终显示是按照哪种设定显示
+  - 其中tag权重为1，class权重为10，id权重为100，权重可以相加，但是最好避免两种权重相等的css设定作用于同一个元素
 - css3新增的伪类
 - 居中div的五种方法
--  
+-  display的值有哪些，说明他们的作用
+- 为何要初始化css样式
+- 
