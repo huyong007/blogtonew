@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="nav">
+    <div id='app' class="nav">
         <ul>
             <li>
                 <a class="active" href="#info">主页</a>
@@ -62,9 +62,7 @@
             </div>
         </div>
         <div class="learn">
-            <div class='demo1'></div>
-            <div class='demo2'></div>
-            <div class='demo3'></div>
+<demo></demo>
         </div>
         <div class="contact">
             contact me
@@ -74,5 +72,18 @@
         foot bar
     </div>
 </body>
+<script>
+    var component=('demo',{
+        data:function(){
+            return {
+                count:0
+            }
+        },
+        template: '<input type="button" v-on:click="count++">you click {{ count }}'
+    });
+    new Vue({
+        el:'#app',
+    })
+</script>
 
 </html>

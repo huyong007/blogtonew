@@ -27,3 +27,15 @@
 - 循环：for/in、do/while、
 - 跳转：return、break、continue、return、throw、try/catch/finally
 - 其他：with、debugger、"use strict"
+#对象
+- 创建对象的三种方式
+- 对象属性的特性：分为数据属性的特性和存储器属性的特性
+- 对象的属性三种
+- 对象的访问、检测、枚举、删除、设置
+- 对象的四种方法
+#数组
+- 创建数组的两种方式
+- 数组的操作：读写、length、delete、遍历、方法
+  - E3中数组的13种方法，E5中数组的九种方法
+- 仿造多维数组和类型检查
+- 类数组对象和字符串
