@@ -63,3 +63,24 @@ div.desc {
     width: 160px;
     text-align: center;
 }
+
+.contact {
+    border: solid 10px black;
+    margin: 10px;
+    padding: 20px;
+    display: block;
+}
+
+.contact1 {
+    border: solid 10px blue;
+    margin: 10px;
+    padding: 20px;
+    
+}
+
+.contact2 {
+    border: solid 10px red;
+    margin: 10px;
+    padding: 20px;
+    display: inline-table;
+}

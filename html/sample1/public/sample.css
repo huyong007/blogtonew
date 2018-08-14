@@ -1,0 +1,40 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.head {
+    display: table;
+    height: 200px;
+    width: auto;
+}
+
+.headImg {
+    z-index: -1;
+}
+
+.title {
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    text-align: center;
+}
+
+.footer1 {
+    text-align: center;
+}
+
+.lianxi1 {
+    display: block;
+    border-bottom: 1px solid black;
+}
+
+.cell {
+    display: block;
+    border: solid 1px black;
+}
+
+.footer2 {
+    background-color: #696969;
+    display: flex;
+}
