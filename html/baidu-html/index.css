@@ -1,0 +1,51 @@
+.index-header .index-header-list-items {
+    z-index:2;
+    color:#fff;
+    position:absolute;
+    right:0;
+    top:0;
+    margin:19px 0px 5px;
+    padding:0 96px 0 0 ;
+}
+
+
+.index-header .index-header-list-items>.index-header-list-items-item {
+
+    float:left;
+    color:#333;
+    font-weight: 700px;
+    line-height:24px;
+    margin-left:20px;
+    font-size:13px;
+    text-decoration:underline;
+
+}
+.index-header .index-header-list-items .more{
+    background-color:lawngreen;
+    text-decoration-line:none;
+};
+
+.index-body .index-body-logo {
+    
+    outline:none;
+    display:inline;
+    cursor:pointer;
+}
+.index-body .index-body-logo .index-body-logo-pic{
+    text-align:center;
+}
+
+
+.index-footer-list-items .index-footer-list-items-item {
+    display:block;
+    text-decoration:underline;
+    text-align:center;
+    float:left;
+    margin-left:20px;
+    color:#333;
+
+}
+.index-footer-gov-list-items {
+    display:block;
+    float:left;
+}
