@@ -1,0 +1,41 @@
+.public-header {
+    height:110px;
+}
+
+.public-header .header-logo {
+    float:left;
+    margin-top:40px;
+}
+
+.public-header .header-logo a{
+    
+    height:54px;
+    width:182px;
+    background:url("../images/index-header-logo.png")
+    
+}
+.public-header .header-nav {
+    float:right;
+    font-size:14px;
+}
+
+.public-header .header-nav .item {
+    float:left;
+    margin-top:44px;
+    
+    margin-left:50px;
+}
+.public-header .header-nav .item a {
+    color:#333333;
+}
+
+.public-container {
+    position:relative;
+    margin:0 auto;
+    background:#006dcc;
+    width:1100px;
+}
+.public-footer {
+    height:318px;
+    background:#3b3b3b;
+}
