@@ -259,7 +259,7 @@ function changeStuff(obj) {
 var foo = changeStuff(obj1);
 console.log(foo);// '222' 参数obj指向了新的对象obj2
 console.log(obj1.value);//'333' */
-var v1 = []
+/*var v1 = []
 var v2 = {};
 var v3 = {};
 function foo(v1, v2, v3) {
@@ -274,3 +274,42 @@ foo(v1, v2, v3);
 console.log(v1);
 console.log(v2);
 console.log(v3.a);
+function palindrome(str) {
+    var newStr=str.toLowerCase();
+    var newerStr = newStr.replace(/[^a-z0-9]/g,"");
+   var olderStr=newerStr.split("").reverse().join("");
+    if(olderStr===newerStr);
+       return true;
+    };
+  palindrome("eiy IE");
+  
+15
+16
+function palindrome(str) {
+    if (str.length === 1) {
+        return true;
+    }
+    var replacedStr = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+    // 双指针 i 与 j，用来代表当前判断位置的索引
+    for (var i = 0, j = replacedStr.length - 1; i < replacedStr.length / 2; i++,j--) {
+        // 如果检测到了不相同
+        if (replacedStr[i] !== replacedStr[j]) {
+            // 直接跳出判断，返回 false
+            return false
+        }
+    }
+    // 所有的都判断完了，没有不相同的，返回 true
+    return true;
+}*/
+  function palindrome(str) {
+    var newStr=str.toLowerCase().replace(/[^a-z0-9]/g,"");
+if(newStr.length<2){
+    console.log(2);
+    return true ;
+}
+   if (newStr[0]!==newStr[newStr.length-1]){
+       return false;
+   }
+   return palindrome(newStr.slice(1,-1));
+    };
+  palindrome("eiy IE");
