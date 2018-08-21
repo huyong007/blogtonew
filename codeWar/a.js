@@ -300,7 +300,7 @@ function palindrome(str) {
     }
     // 所有的都判断完了，没有不相同的，返回 true
     return true;
-}*/
+}
   function palindrome(str) {
     var newStr=str.toLowerCase().replace(/[^a-z0-9]/g,"");
 if(newStr.length<2){
@@ -313,3 +313,114 @@ if(newStr.length<2){
    return palindrome(newStr.slice(1,-1));
     };
   palindrome("eiy IE");
+  
+    }
+
+    .reduce(function(x,y){return (x>y)?x:y;});
+ 
+
+  function findLongestWord(str) {
+     
+    var newArr =  str.split(" ").map(function(x){
+        return x.length;
+    }).sort(function(a,b){
+        return b-a;
+    });
+    console.log(newArr[0]);
+        
+
+     
+     return newArr[0];
+   }
+   
+   findLongestWord("The quick brown fox jumped over the lazy dog"); 
+   
+   
+   function titleCase(str) {
+    var newArr =str.split(" ");
+    
+   var  a=newArr.map(function(x){
+      return   x.split("");
+    });
+    var b=a.map(function(x){
+        return x.shift();
+    });
+    var c =b.map(function(x){
+        return x.toUpperCase();
+    });
+  
+    var f = a.map(function(x){
+        return x.map(function(x){
+            return x.toLowerCase();
+        })
+    });
+    var e = f.map(function(x){
+        return x.join("");
+    });
+    console.log(f);
+    console.log(b);
+    console.log(c);
+    console.log(e);
+    var d =[];
+    for(i=0;i<a.length;i++){
+          d.push(c[i]+e[i]);
+    };
+    console.log(d.join(" "));
+  
+
+   
+
+    
+  }
+  
+  titleCase("I'm a liTTle tea pot");  
+
+  function largestOfFour(arr) {
+    // 请把你的代码写在这里
+    var b=[];
+    for(i=0;i<arr.length;i++){
+       b.push(arr[i].reduce(function(x,y){
+        return  x>y?x:y;
+      })) 
+    }
+
+console.log(b);
+    return arr;
+  }
+  
+  largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+  function confirmEnding(str, target) {
+    // 请把你的代码写在这里
+  var n = target.split("").length;
+  console.log(n);
+  var a = str.slice(str.length-n);
+  console.log(a);
+  if(a===str){
+      return true;
+  }else{
+      return false;
+  }
+  }
+  
+  confirmEnding("Bastian", "tian");*/
+
+  function repeat(str, num) {
+    // 请把你的代码写在这里
+    if(num<0){
+      return [];
+    }else{
+        var a = [];
+        for(i=0;i<num;i++){
+            a.push(str);
+        };
+       console.log(a);
+       console.log(a.length);
+
+
+      };
+    console.log(a.join(""));
+  }
+  
+  repeat("abc", 10);
+  
