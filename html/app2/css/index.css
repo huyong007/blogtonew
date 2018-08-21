@@ -40,3 +40,33 @@
 .index-banner-text  .text-info .txt {
     margin:0 26px;
 }
+
+.index-menu {
+    position:relative;
+    border-top:solid 4px #f34949;
+}
+.index-menu .menu-tips {
+    position:absolute;
+    left:50%;
+    top:0;
+    margin-left:-78px;/*这个是干嘛用的*/
+    width: 156px;
+    height:76px;
+    background-color:#f34949;
+    text-align:center;
+    color:#fff;
+    line-height:65px;/*行高设置没用过*/
+}
+/*伪类大部分都不懂，css实现一个倒三角，这个去找资料学习·*/
+.index-menu .menu-tips:after {
+    position:absolute;
+    content:'';
+    left:0;
+    bottom:0;
+    width:0;
+    height:0;
+    border-left:78px solid transparent;
+    border-right:78px solid transparent;
+    border-bottom:10px solid #fff;
+
+}
