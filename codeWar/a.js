@@ -403,7 +403,7 @@ console.log(b);
   }
   }
   
-  confirmEnding("Bastian", "tian");*/
+  confirmEnding("Bastian", "tian");
 
   function repeat(str, num) {
     // 请把你的代码写在这里
@@ -422,5 +422,70 @@ console.log(b);
     console.log(a.join(""));
   }
   
-  repeat("abc", 10);
-  
+  repeat("abc", 10);*/
+/*截断字符串
+
+（用瑞兹来截断对面的退路）
+ 
+如果字符串的长度比指定的参数num长，则把多余的部分用...来表示。
+ 
+切记，插入到字符串尾部的三个点号也会计入字符串的长度。
+ 
+但是，如果指定的参数num小于或等于3，则添加的三个点号不会计入字符串的长度。
+ 
+当你完成不了挑战的时候，记得开大招'Read-Search-Ask'。
+.split(' ').push("...")
+
+function truncate(str, num) {
+    // 请把你的代码写在这
+    if(num<=3){
+        if (str.length <= num) {
+            return str;
+        } else {
+            var a = str.split("").slice(0, num);
+            console.log(a);
+            a.push("...");
+            var b = a.join("");
+            console.log(a);
+            console.log(b);
+            return b;
+        }
+    }else{
+        if (str.length <= num) {
+            return str;
+        } else {
+            var a = str.split("").slice(0, num-3);
+            console.log(a);
+            a.push("...");
+            var b = a.join("");
+            console.log(a);
+            console.log(b);
+            return b;
+        }
+    }
+}
+
+truncate("A-", 1) ;
+把一个数组arr按照指定的数组大小size分割成若干个数组块。
+
+例如:chunk([1,2,3,4],2)=[[1,2],[3,4]];
+
+chunk([1,2,3,4,5],2)=[[1,2],[3,4],[5]];
+*/
+
+function chunk(arr, size) {
+    // 请把你的代码写在这里
+    var a = arr.length / 2;
+    console.log(Math.ceil(a));
+    var newArr = [];
+    for(i=0;i<arr.length/2;i++){
+        newArr.push(arr.slice(size*i,size+size*i));
+    }
+
+
+    console.log(newArr);
+    console.log(arr);
+    return arr;
+}
+
+chunk(["a", "b", "c", "d", 3], 2);
