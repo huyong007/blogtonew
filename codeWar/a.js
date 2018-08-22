@@ -471,7 +471,7 @@ truncate("A-", 1) ;
 例如:chunk([1,2,3,4],2)=[[1,2],[3,4]];
 
 chunk([1,2,3,4,5],2)=[[1,2],[3,4],[5]];
-*/
+
 
 function chunk(arr, size) {
     // 请把你的代码写在这里
@@ -489,3 +489,74 @@ function chunk(arr, size) {
 }
 
 chunk(["a", "b", "c", "d", 3], 2);
+
+
+返回一个数组被截断n个元素后还剩余的元素，截断从索引0开始。
+
+function slasher(arr, howMany) {
+    // 请把你的代码写在这里
+
+    if (arr.length - howMany + 1 <= 0) {
+        console.log([]);
+        return [];
+    }
+    else if (arr.length - howMany + 1 <= arr.length) {
+        var a = arr.slice(-(arr.length - howMany ));
+        console.log(a);
+    }
+    else {
+        console.log(arr);
+        return arr;
+    }
+}
+
+slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5)
+
+
+function mutation(arr) {
+    // 请把你的代码写在这里
+    var a = arr[0].toLowerCase().split("");
+    var b = arr[1].toLowerCase().split("");
+    console.log(a);
+    console.log(b);
+    return b.every(function(x){
+        console.log(a.indexOf(x)>=0);
+        return a.indexOf(x)>=0;
+    });
+   
+  }
+mutation(["hello", "Hello"]);
+
+
+function bouncer(arr) {
+    // 请把你的代码写在这里
+    console.log(null==undefined);
+  var a = arr.filter(function(x){
+     return x ;
+    });
+    console.log(a);
+   
+  }
+  
+  bouncer([false, null, 0, NaN, undefined, ""])
+
+  实现一个摧毁(destroyer)函数，第一个参数是待摧毁的数组，其余的参数是待摧毁的值。*/
+
+
+function destroyer(arr) {
+    // 请把你的代码写在这里
+    console.log(typeof(arguments));
+    var b = arguments.filter(function(x){
+        return x!=arguments[1];
+    })
+    console.log(b);
+    arguments.filter(function (x) {
+        return
+    })
+
+    return arr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+
