@@ -540,23 +540,50 @@ function bouncer(arr) {
   
   bouncer([false, null, 0, NaN, undefined, ""])
 
-  实现一个摧毁(destroyer)函数，第一个参数是待摧毁的数组，其余的参数是待摧毁的值。*/
+  实现一个摧毁(destroyer)函数，第一个参数是待摧毁的数组，其余的参数是待摧毁的值。
+   for(i=1;i<arguments.length;i++){
+ 
 
 
 function destroyer(arr) {
     // 请把你的代码写在这里
-    console.log(typeof(arguments));
-    var b = arguments.filter(function(x){
-        return x!=arguments[1];
-    })
+    var b = [];
+    for (i = 1; i < arguments.length; i++) {
+        b.push(arguments[i]);
+    }
+    console.log('--------');
     console.log(b);
-    arguments.filter(function (x) {
-        return
-    })
+    var a = arguments[0];
 
-    return arr;
+    for (i = 0; i < b.length; i++) {
+        (function fil(x) {
+            var f = a.filter(function (y) {
+                return y != b[i];
+            })
+            return fil(f);
+        })();
+        console.log(f);
+    }
+
+
 }
 
+
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+function destroyer(arr) {
+    // 创建包含其余参数的数组 
+    var args = []; 
+    for (var i = 1; i < arguments.length; i++) {
+         args.push(arguments[i]); 
+        }
+    //返回数组args中不存在的元素 
+    function filtered(ele) { 
+        return args.indexOf(ele) < 0; 
+    }
+    var newarr = arr.filter(filtered); 
+    return newarr;
+}
+ */
+
 
 
