@@ -648,7 +648,7 @@ diff([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
 所有返回的 罗马数字 都应该是大写形式。*/
 
 function convert(num) {
-   var arr = num.("");
+   
    console.log(arr);
     return num;
    }
