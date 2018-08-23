@@ -1,72 +1,179 @@
 .index-banner {
-    position:relation;
+    position: relation;
     background: #b3b3b3;
 }
 
 .index-banner-bg {
-    height:570px;
-    overflow:hidden;
+    height: 570px;
+    overflow: hidden;
 }
 
-.index-banner-bg img{
-    margin:0 auto;
+.index-banner-bg img {
+    margin: 0 auto;
 }
+
 .index-banner-text {
-    position:absolute;
-    top:200px;
-    left:50%;
-    margin-left:-338px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -338px;
 }
 
-.index-banner-text  .text-logo {
-    width:776px;
-    height:117px;
-    background:url("../images/banner.png") no-repeat;
+.index-banner-text .text-logo {
+    width: 776px;
+    height: 117px;
+    background: url("../images/banner.png") no-repeat;
 }
 
-.index-banner-text  .text-info {
-    margin-top:17px;
-    text-align:center;
-    color:#fff;
+.index-banner-text .text-info {
+    margin-top: 17px;
+    text-align: center;
+    color: #fff;
 }
 
-.index-banner-text  .text-info .line {
-    display:inline-block;
-    width:40px;
-    border-top:1px solid #fff;
+.index-banner-text .text-info .line {
+    display: inline-block;
+    width: 40px;
+    border-top: 1px solid #fff;
     vertical-align: middle;
 }
- 
-.index-banner-text  .text-info .txt {
-    margin:0 26px;
+
+.index-banner-text .text-info .txt {
+    margin: 0 26px;
 }
 
 .index-menu {
-    position:relative;
-    border-top:solid 4px #f34949;
+    position: relative;
+    border-top: solid 4px #f34949;
 }
-.index-menu .menu-tips {
-    position:absolute;
-    left:50%;
-    top:0;
-    margin-left:-78px;/*这个是干嘛用的*/
-    width: 156px;
-    height:76px;
-    background-color:#f34949;
-    text-align:center;
-    color:#fff;
-    line-height:65px;/*行高设置没用过*/
-}
-/*伪类大部分都不懂，css实现一个倒三角，这个去找资料学习·*/
-.index-menu .menu-tips:after {
-    position:absolute;
-    content:'';
-    left:0;
-    bottom:0;
-    width:0;
-    height:0;
-    border-left:78px solid transparent;
-    border-right:78px solid transparent;
-    border-bottom:10px solid #fff;
 
+.index-menu .menu-tips {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -78px;
+    /*这个是干嘛用的*/
+    width: 156px;
+    height: 76px;
+    background-color: #f34949;
+    text-align: center;
+    color: #fff;
+    line-height: 65px;
+    /*行高设置没用过*/
+}
+
+/*伪类大部分都不懂，css实现一个倒三角，这个去找资料学习·*/
+
+.index-menu .menu-tips:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 78px solid transparent;
+    border-right: 78px solid transparent;
+    border-bottom: 10px solid #fff;
+}
+
+.index-menu .menu-list {
+    margin-top: 150px;
+    color: #555;
+    overflow: hidden;
+    /* 为何是这个值 */
+}
+
+.index-menu .menu-list ul {
+    width: 1160px;
+}
+
+.index-menu .menu-item {
+    float: left;
+    width: 520px;
+    margin-right: 60px;
+    margin-bottom: 56px;
+    /* 为何是56px */
+}
+
+.index-menu .menu-item .title, .index-menu .menu-item .line {
+    float: left;
+}
+
+.index-menu .menu-item .price {
+    float: right;
+}
+
+.index-menu .menu-item .title {
+    width: 230px;
+    color: #555;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.index-menu .menu-item .comment {
+    margin-top: 4px;
+    color: #b7b7b7;
+    font-size: 12px;
+}
+
+.index-menu .menu-item .line {
+    margin-top: 10px;
+    width: 192px;
+    border-top: 1px solid #e3e1e1;
+}
+
+.index-menu .menu-more-btn {
+    width: 112px;
+    height: 34px;
+    margin: 0 auto;
+    padding: 16px;
+    border: solid 1px #d7d5d5;
+    line-height: 32px;
+    color: #b7b7b7;
+}
+
+.index-menu .menu-more-btn .icon {
+    display: inline-block;
+    width: 11px;
+    height: 7px;
+    margin-left: 10px;
+    background: url("../images/index-menu-icon.gif") no-repeat;
+}
+
+.index-panel {
+    margin-top: 200px;
+}
+
+.index-panel-header h3 {
+    float: left;
+    margin-right: 48px;
+    color: #3b3b3b;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.index-panel-header .line {
+    float: left;
+    margin-top: 14px;
+    width: 200px;
+    border-top: 1px solid #e3e1e1;
+}
+
+.index-panel-header .btn-group {
+    font-size: 0;
+    float: right;
+}
+
+.index-panel-header .btn {
+    display: inline-block;
+    margin-left: 11px;
+    width: 9px;
+    height: 9px;
+    background: #dedede;
+    border-radius: 50%;
+}
+
+.index-panel-header .active {
+    background: #9b9b9b;
 }
