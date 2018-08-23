@@ -583,7 +583,74 @@ function destroyer(arr) {
     var newarr = arr.filter(filtered); 
     return newarr;
 }
- */
+
+
+function where(arr, num) {
+    // 请把你的代码写在这里
+    var a = arr.unshift(num);
+    console.log(a);
+    console.log(arr);
+    var b = arr.sort(function(a,b){return a-b});
+    console.log("-------");
+    console.log(b);
+    var c =b.indexOf(num);
+    console.log(c);
+    
+    
+   
 
 
 
+
+}
+
+where([3, 10, 5], 3) 
+
+我们会传递给你一个包含两个数字的数组。返回这两个数字和它们之间所有数字的和。
+
+最小的数字并非总在最前面。
+function sumAll(arr) {
+    var newArr = [];
+    for (i = Math.min(arr[0], arr[1]); i <= Math.max(arr[0], arr[1]); i++) {
+        newArr.unshift(i);
+
+    }
+    var sum = newArr.reduce(function (x, y) {
+        return y + x;
+    })
+    arr.push(sum);
+    return arr;
+}
+
+sumAll([1, 4]);
+比较两个数组，然后返回一个新数组，该数组的元素为两个给定数组中所有独有的数组元素。换言之，返回两个数组的差异。
+function diff(arr1, arr2) {
+    var newArr = [];
+    var newArr = arr1.concat(arr2);
+
+    var filArr = newArr.filter(function (x) {
+        
+        if(arr1.indexOf(x) < 0 || arr2.indexOf(x) < 0){
+            return true ;
+        }else{
+            return false;
+        }
+    });
+    console.log(newArr);
+    console.log(filArr);
+    return newArr;
+}
+
+diff([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
+
+将给定的数字转换成罗马数字。
+
+所有返回的 罗马数字 都应该是大写形式。*/
+
+function convert(num) {
+   var arr = num.("");
+   console.log(arr);
+    return num;
+   }
+   
+   convert(36);
