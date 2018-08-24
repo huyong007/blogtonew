@@ -703,36 +703,147 @@ diff([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
 // 注意：替换时保持原单词的大小写。例如，如果你想用单词 "dog" 替换单词 "Book" ，你应该替换成 "Dog"。
 
 
-function myReplace(str, before, after) {
-    // var a = str.split(" ");
-    // console.log(a);
-    // var b = a.indexOf(before);
-    // console.log(b);
-    // var c = a[b].split("");
-    // console.log("c = " + c);
-    // var d = after.split("");
-    // before.split("")[0] === before.split("")[0].toUpperCase() ? d[0] = d[0].toUpperCase() : d[0];
+// function myReplace(str, before, after) {
+// var a = str.split(" ");
+// console.log(a);
+// var b = a.indexOf(before);
+// console.log(b);
+// var c = a[b].split("");
+// console.log("c = " + c);
+// var d = after.split("");
+// before.split("")[0] === before.split("")[0].toUpperCase() ? d[0] = d[0].toUpperCase() : d[0];
 
-    // a[b] = d.join("");
-    // console.log(a[b]);
-    // console.log(a.join(" "));
-    // return a.join(" ");
-    // console.log(str.split(" ")[str.split(" ").indexOf(before)].split(""));
+// a[b] = d.join("");
+// console.log(a[b]);
+// console.log(a.join(" "));
+// return a.join(" ");
+// console.log(str.split(" ")[str.split(" ").indexOf(before)].split(""));
 
-    // if(str.split(" ")[str.split(" ").indexOf(before)].split("")[0] === str.split(" ")[str.split(" ").indexOf(before)].split("")[0].toUpperCase()){
-    //     after.split("")[0]=after.split("")[0].toUpperCase();
-    //     console.log(after);
+// if(str.split(" ")[str.split(" ").indexOf(before)].split("")[0] === str.split(" ")[str.split(" ").indexOf(before)].split("")[0].toUpperCase()){
+//     after.split("")[0]=after.split("")[0].toUpperCase();
+//     console.log(after);
 
-    //     str.split(" ")[str.split(" ").indexOf(before)] = after;
-    // } else{
-    //     str.split(" ")[str.split(" ").indexOf(before)] = after;
-    // } 
-    if (before[0] = before[0].toUpperCase()) {
-        after = after[0].toUpperCase() + after.slice(1)
-    }
-    str = str.replace(before, after);
-    console.log(str);
-    return str;
-}
+//     str.split(" ")[str.split(" ").indexOf(before)] = after;
+// } else{
+//     str.split(" ")[str.split(" ").indexOf(before)] = after;
+//     // } 
+//     if (before[0] = before[0].toUpperCase()) {
+//         after = after[0].toUpperCase() + after.slice(1)
+//     }
+//     str = str.replace(before, after);
+//     console.log(str);
+//     return str;
+// }
 
-myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");
+// myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");
+// Pig Latin 把一个英文单词的第一个辅音或辅音丛（consonant cluster）移到词尾，然后加上后缀 "ay"。
+
+// 如果单词以元音开始，你只需要在词尾添加 "way" 就可以了。
+
+
+// function translate(str) {
+//     var pattern = /[aeiou]/;
+//     var matches = pattern.exec(str);
+//     var index = matches.index;
+//     if (matches.index = 0) {
+//         var str = str + "way"
+//         console.log(str);
+//         return str;
+//     } else {
+//         var str = str.slice(index) + str.slice(0, index) + "ay";
+//         console.log(str);
+//         return str;
+//     }
+// }
+
+// translate("paragraphs");
+// DNA 链缺少配对的碱基。依据每一个碱基，为其找到配对的碱基，然后将结果作为第二个数组返回。
+
+// Base pairs（碱基对） 是一对 AT 和 CG，为给定的字母匹配缺失的碱基。
+
+// 在每一个数组中将给定的字母作为第一个碱基返回。
+
+// 例如，对于输入的 GCG，相应地返回 [["G", "C"], ["C","G"],["G", "C"]]
+
+// 字母和与之配对的字母在一个数组内，然后所有数组再被组织起来封装进一个数组。
+// function pair(str) {
+//     var arr = [];
+//     var arr = str.split("").map(change);
+//     function change(x) {
+//         var xArr= x.split("");
+//         if (["G", "C"].indexOf(x) >= 0) {
+//             xArr.push(["G","C"][1-["G", "C"].indexOf(x)]);
+//             return xArr;
+//         }else{
+//             xArr.push(["A","T"][1-["A", "T"].indexOf(x)]);
+//             console.log(xArr);
+//             return xArr;
+//         }
+//     }
+//     return arr;
+// }
+
+// pair("GCG");
+// 看到简书上一个牛逼的方法，比我的方法更具有扩展性，就是for循环用的不好
+// function pair(str) {
+//     var rel = [];
+//     var bp = {
+//       A: "T",
+//       T: "A",
+//       C: "G",
+//       G: "C"
+//     };
+//     var strarr = str.split("");
+//     for(var i = 0; i<strarr.length; i++) {
+//       rel[i] = [strarr[i]];
+//       rel[i].push(bp[strarr[i]]);
+//     }
+//     return rel;
+//   }
+  
+//   pair("ATCGA");
+  
+//   作者：少年vv
+//   链接：https://www.jianshu.com/p/f3b9622b80d1
+//   來源：简书
+//   简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+//做了那么多的题，给我的感觉就是首先需要搞懂你的目标是什么，不是为了方法而方法，解题的方法：1，要有扩展性；2，减少硬编程；3，盯着不变的量，今儿通过判断和循环来解决问题；
+// 其实数组的那些方法里面：map,filter,foreach,every,some,indexOf,lastIndexOf,reduce,reduceRight,等很想if，for，switch，while的变形，
+// 其次对于类数组对象向对象和数组的转换，这个充分体现了js中的巨大优势，不用过多考虑其原始的类型，
+// function fearNotLetter(str) {
+//     var letter = "abcdefghijklmnopqrstuvwxyz";
+//     var arr = letter.split("");
+//     var newNum = str.split("").map(function(x){
+//        return  arr.indexOf(x)
+//     });
+//     for(i=0;i<newNum.length;i++){
+//         if(newNum[i+1]-newNum[i]>1){
+//             console.log(arr.slice([newNum[i]+1],[newNum[i+1]]).join(""));
+//           return   arr.slice([newNum[i]+1],[newNum[i+1]]).join("");
+//         }else {
+//             continue;
+//             ;
+            
+//         };
+//     }
+  
+//   }
+
+// fearNotLetter("abce");
+// 写一个 function，传入两个或两个以上的数组，返回一个以给定的原始数组排序的不包含重复值的新数组。
+
+// 换句话说，所有数组中的所有值都应该以原始顺序被包含在内，但是在最终的数组中不包含重复值。
+
+// 非重复的数字应该以它们原始的顺序排序，但最终的数组不应该以数字顺序排序。
+function unite(arr1, arr2, arr3) {
+
+
+    
+    return arr1;
+  }
+  
+  unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+  
+ 
+
+  
