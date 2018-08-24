@@ -647,12 +647,92 @@ diff([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
 
 所有返回的 罗马数字 都应该是大写形式。*/
 
-function convert(num) {
-   
-   console.log(arr);
-    return num;
-   }
-   
-   convert(36);
-   
-   
+// function convert(num) {
+
+//    console.log(arr);
+//     return num;
+//    }
+
+//    convert(36);
+// 写一个 function，它遍历一个对象数组（第一个参数）并返回一个包含相匹配的属性 - 值对（第二个参数）的所有对象的数组。
+// 如果返回的数组中包含 source 对象的属性 - 值对，那么此对象的每一个属性 - 值对都必须存在于 collection 的对象中。
+
+// 例如，如果第一个参数是
+// [{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null },
+//  { first: "Tybalt", last: "Capulet" }]，
+//  第二个参数是 { last: "Capulet" } ，
+//  那么你必须从数组（第一个参数）返回其中的第三个对象，因为它包含了作为第二个参数传递的属性 - 值对。
+
+// function where(collection, source) {
+//     var arr = [];
+//     // What's in a name?
+//     for (i = 0; i < collection.length; i++) {
+//         for (j = 0; j < Object.keys(source).length; j++) {
+//             console.log(Object.keys(source));
+//             collection[i].hasOwnProperty(Object.keys(source)[j]) && collection[i][Object.keys(source)[j]] === source[Object.keys(source)[j]] ? arr.push(collection[i]) : arr.push();
+
+//         }
+
+//     }
+//     console.log(arr);
+
+
+//     var sPorp = Object.keys(source);
+//     var arr = collection.filter(function (cObj) {
+//         return sPorp.every(function (pro) {
+//             return cObj.hasOwnProperty(pro) && cObj[pro] === source[pro];
+//         })
+
+//     })
+
+// console.log(arr);
+
+//     return arr;
+// }
+
+// where([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+// 使用给定的参数对句子执行一次查找和替换，然后返回新句子。
+
+// 第一个参数是将要对其执行查找和替换的句子。
+
+// 第二个参数是将被替换掉的单词（替换前的单词）。
+
+// 第三个参数用于替换第二个参数（替换后的单词）。
+
+// 注意：替换时保持原单词的大小写。例如，如果你想用单词 "dog" 替换单词 "Book" ，你应该替换成 "Dog"。
+
+
+function myReplace(str, before, after) {
+    // var a = str.split(" ");
+    // console.log(a);
+    // var b = a.indexOf(before);
+    // console.log(b);
+    // var c = a[b].split("");
+    // console.log("c = " + c);
+    // var d = after.split("");
+    // before.split("")[0] === before.split("")[0].toUpperCase() ? d[0] = d[0].toUpperCase() : d[0];
+
+    // a[b] = d.join("");
+    // console.log(a[b]);
+    // console.log(a.join(" "));
+    // return a.join(" ");
+    // console.log(str.split(" ")[str.split(" ").indexOf(before)].split(""));
+
+    // if(str.split(" ")[str.split(" ").indexOf(before)].split("")[0] === str.split(" ")[str.split(" ").indexOf(before)].split("")[0].toUpperCase()){
+    //     after.split("")[0]=after.split("")[0].toUpperCase();
+    //     console.log(after);
+
+    //     str.split(" ")[str.split(" ").indexOf(before)] = after;
+    // } else{
+    //     str.split(" ")[str.split(" ").indexOf(before)] = after;
+    // } 
+    if (before[0] = before[0].toUpperCase()) {
+        after = after[0].toUpperCase() + after.slice(1)
+    }
+    str = str.replace(before, after);
+    console.log(str);
+    return str;
+}
+
+myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");
