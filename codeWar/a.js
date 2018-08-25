@@ -800,9 +800,9 @@ diff([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
 //     }
 //     return rel;
 //   }
-  
+
 //   pair("ATCGA");
-  
+
 //   作者：少年vv
 //   链接：https://www.jianshu.com/p/f3b9622b80d1
 //   來源：简书
@@ -823,10 +823,10 @@ diff([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
 //         }else {
 //             continue;
 //             ;
-            
+
 //         };
 //     }
-  
+
 //   }
 
 // fearNotLetter("abce");
@@ -838,12 +838,25 @@ diff([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
 function unite(arr1, arr2, arr3) {
 
 
-    
-    return arr1;
-  }
-  
-  unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);
-  
- 
+    for (i = 1; i < arguments.length; i++) {
+        extend(arr1, arguments[i]);
+    }
 
-  
+
+    function extend(o, p) {
+        for (prop in p) {
+            if (o.indexOf(p[prop])=-1 ) {
+                o.push(p[prop]);
+            } else continue;
+        }
+        console.log(o);
+        return o;
+    }
+
+
+}
+
+unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+
+
