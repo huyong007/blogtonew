@@ -1,8 +1,8 @@
 .index-banner {
-    position: relation;
+    position: relative;
     background: #b3b3b3;
 }
-
+/* 老师设置的居中，两边有背景的如何搞 */
 .index-banner-bg {
     height: 570px;
     overflow: hidden;
@@ -11,7 +11,7 @@
 .index-banner-bg img {
     margin: 0 auto;
 }
-
+/* margin-left为何是负值 */
 .index-banner-text {
     position: absolute;
     top: 200px;
@@ -30,7 +30,7 @@
     text-align: center;
     color: #fff;
 }
-
+/* 好神奇的样式 */
 .index-banner-text .text-info .line {
     display: inline-block;
     width: 40px;
@@ -92,7 +92,7 @@
     width: 520px;
     margin-right: 60px;
     margin-bottom: 56px;
-    /* 为何是56px */
+   
 }
 
 .index-menu .menu-item .title, .index-menu .menu-item .line {
@@ -107,6 +107,7 @@
     width: 230px;
     color: #555;
     overflow: hidden;
+    /* 后面着两个元素是什么意思 */
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -121,6 +122,7 @@
     margin-top: 10px;
     width: 192px;
     border-top: 1px solid #e3e1e1;
+    vertical-align:middle;
 }
 
 .index-menu .menu-more-btn {

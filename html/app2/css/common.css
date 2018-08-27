@@ -39,11 +39,11 @@
 }
 
 .public-footer {
-    height: 218px;
+    height: 318px;
     background: #3b3b3b;
     padding: 100px;
 }
-
+/* inline-height为何设置为1.8不理解 */
 .public-footer .footer-col {
     margin-right: 60px;
     float: left;
@@ -52,7 +52,7 @@
     line-height: 1.8;
     font-size: 16px;
 }
-
+/* 已经全部使用了float：left为何还在使用last-chi如果去掉就会跑到第一列的下面 */
 .public-footer .footer-col:last-child {
     margin-right: 0;
 }
@@ -60,6 +60,7 @@
 .public-footer .footer-logo a {
     height: 30px;
     width: 70px;
-    margin-top: -10px;
+    margin-bottom: 34px;
     background: url("../images/index-footer-logo.png")
 }
+
